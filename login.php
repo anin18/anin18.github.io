@@ -18,7 +18,7 @@ require 'header.php';
                     href="signup.php">ovde</a>.</h5>';
                     echo '<form action="includes/login.inc.php" method="POST" class="login-form m-auto">
                 <div class="form-group mb-5">
-                    <input type="text" class="form-control" placeholder="Email" name="mailuid">
+                    <input type="text" class="form-control" placeholder="Username" name="mailuid">
                 </div> 
                 <div class="form-group mb-5">
                     <input type="password" class="form-control" placeholder="Password" name="pwd">
@@ -37,7 +37,6 @@ require 'header.php';
                         } 
                     }
                 }
-                ?>
                 ?>
 
             </div>
