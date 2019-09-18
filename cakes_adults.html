@@ -12,10 +12,10 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-		<!--Fancybox CSS-->
-		<link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css">
-	
-		<!--Custom page CSS-->
+	<!--Fancybox CSS-->
+	<link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css">
+
+	<!--Custom page CSS-->
 	<link rel="stylesheet" type="text/css" href="css/fonts.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/responsive.css">
@@ -63,28 +63,28 @@
 						<li class="nav-item position-relative cake-nav">
 							<a class="nav-link active" href="cakes.html">Torte
 								<span class="fa fa-caret-down position-absolute"></span> </a>
-							 <!--SUBMENU STARTS HERE-->
-							 <ul class="submenu submenu-visible list-unstyled">
-                                <li class="submenu-item">
-                                    <a href="cakes_kids.html" class="submenu-link">Za decu</a>
-                                </li>
-                                <li class="submenu-item">
-                                    <a href="cakes_18th.html" class="submenu-link">Za 18.rodjendan</a>
-                                </li>
-                                <li class="submenu-item">
-                                    <a href="cakes_wedding.html" class="submenu-link">Za vencanje</a>
-                                </li>
-                                <li class="submenu-item">
-                                    <a href="cakes_creative.html" class="submenu-link">Razni oblici</a>
-                                </li>
-                                <li class="submenu-item submenu-item-active">
-                                    <a href="cakes_adults.html" class="submenu-link">Svecane</a>
-                                </li>
-                                <li class="submenu-item">
-                                    <a href="my_cookie.html" class="submenu-link" href="#">Kolaci</a>
-                                </li>
-                            </ul>
-                            <!--SUBMENU ENDS HERE-->
+							<!--SUBMENU STARTS HERE-->
+							<ul class="submenu submenu-visible list-unstyled">
+								<li class="submenu-item">
+									<a href="cakes_kids.html" class="submenu-link">Za decu</a>
+								</li>
+								<li class="submenu-item">
+									<a href="cakes_18th.html" class="submenu-link">Za 18.rodjendan</a>
+								</li>
+								<li class="submenu-item">
+									<a href="cakes_wedding.html" class="submenu-link">Za vencanje</a>
+								</li>
+								<li class="submenu-item">
+									<a href="cakes_creative.html" class="submenu-link">Razni oblici</a>
+								</li>
+								<li class="submenu-item submenu-item-active">
+									<a href="cakes_adults.html" class="submenu-link">Svecane</a>
+								</li>
+								<li class="submenu-item">
+									<a href="my_cookie.html" class="submenu-link" href="#">Kolaci</a>
+								</li>
+							</ul>
+							<!--SUBMENU ENDS HERE-->
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="blog.html">Blog</a>
@@ -92,10 +92,8 @@
 						<li class="nav-item">
 							<a href="index.html#contact" class="nav-link">Kontakt</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link"  href="login.html">
-								Log in <span class="fa fa-user"></span>
-							</a>
+						<li class="nav-item" id="item">
+
 						</li>
 					</ul>
 				</div>
@@ -137,7 +135,7 @@
 						<img src="images/thumbs/adults/a5.jpg" alt="">
 					</a>
 				</div>
-	
+
 				<div class="col-sm-6 col-md-3 col-lg-2">
 					<a href="images/big/adults/a10.jpg" data-fancybox="gallery">
 						<img src="images/thumbs/adults/a10.jpg" alt="">
@@ -353,7 +351,7 @@
 	<!--FOOTER ENDS HERE-->
 
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="js/jquery.min.js"
+	<script src="js/jquery.min.js"></script>
 	<script src="js/popper.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 
@@ -363,5 +361,23 @@
 	<!--All pages js-->
 	<script src="js/main.js"></script>
 </body>
+
+<script type="text/javascript">
+
+	$(document).ready(() => {
+		let login = '<a class="nav-link" href="login.php"> Prijavite se <span class="fa fa-user"></span></a>';
+		let logout = '<a class="nav-link" href="includes/logout.inc.php"> Odjava <span class="fa fa-user"></span></a>';
+		let item = $('#item');
+		$.post("includes/userExist.inc.php")
+			.done(function (result) {
+				if (result == 'true') {
+					item.append(logout);
+				} else {
+					item.append(login);
+				}
+			});
+	});
+
+</script>
 
 </html>

@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/responsive.css">
     <link rel="stylesheet" type="text/css" href="css/animation.css">
-   
+
     <!--Hamburger menu CSS-->
     <link href="css/hamburgers.css" rel="stylesheet">
 
@@ -86,10 +86,8 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#contact">Kontakt</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="login.php">
-                                Log in <span class="fa fa-user"></span>
-                            </a>
+                        <li class="nav-item" id="item">
+
                         </li>
                     </ul>
                 </div>
@@ -141,7 +139,8 @@
                             <span class="fa fa-paperclip position-absolute"></span>
                             <span class="fa fa-smile-o"></span>
                             <h2 class="mb-4 counter display-3  font-weight-bold text-warning">1800</h2>
-                            <h5 class="text-uppercase font-weight-light pb-4 pb-lg-2 pb-xl-4"> zadovoljnih klijenata</h5>
+                            <h5 class="text-uppercase font-weight-light pb-4 pb-lg-2 pb-xl-4"> zadovoljnih klijenata
+                            </h5>
                         </article>
                     </div>
                     <div class="col-sm-6 col-md-3 mb-4 mb-md-0">
@@ -173,20 +172,20 @@
                 <div class="row no-gutters">
                     <div class="col-md-6 mb-5 mb-md-0">
                         <article class="contact-data">
-                                <h4>Adresa: <span>Cukovacka 3, Zemun</span></h4>
-                                <hr>
-                                <h4>Telefon:<span> +38164123456</span>
-                                    <span> +381112345678</span>
-                                </h4>
-                                <hr>
-                                <h4>Radno vreme:
-                                    <ul class="list-unstyled">
-                                        <li>pon-pet:07-17h</li>
-                                        <li>sub: 07-15h</li>
-                                        <li>ned:neradan dan</li>
-                                    </ul>
-                                </h4>
-                                <hr>
+                            <h4>Adresa: <span>Cukovacka 3, Zemun</span></h4>
+                            <hr>
+                            <h4>Telefon:<span> +38164123456</span>
+                                <span> +381112345678</span>
+                            </h4>
+                            <hr>
+                            <h4>Radno vreme:
+                                <ul class="list-unstyled">
+                                    <li>pon-pet:07-17h</li>
+                                    <li>sub: 07-15h</li>
+                                    <li>ned:neradan dan</li>
+                                </ul>
+                            </h4>
+                            <hr>
                         </article>
                     </div>
                     <div class="col-md-6 mb-5 mb-md-0">
@@ -223,8 +222,30 @@
     <script src="js/jquery.waypoints.js" type="text/javascript"></script>
     <script src="js/counterup.js" type="text/javascript"></script>
 
+    <!-- jQuery JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
     <!--All pages js-->
     <script src="js/main.js"></script>
 </body>
+
+<script type="text/javascript">
+
+    $(document).ready(() => {
+        let login = '<a class="nav-link" href="login.php"> Prijavite se <span class="fa fa-user"></span></a>';
+        let logout = '<a class="nav-link" href="includes/logout.inc.php"> Odjava <span class="fa fa-user"></span></a>';
+        let item = $('#item');
+        $.post("includes/userExist.inc.php")
+            .done(function (result) {
+                if (result == 'true') {
+                    item.append(logout);
+                } else {
+                    item.append(login);
+                }
+            });
+    });
+
+</script>
 
 </html>

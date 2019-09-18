@@ -86,10 +86,8 @@
                         <li class="nav-item">
                             <a class="nav-link" href="index.html#contact">Kontakt</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="login.html">
-                                Log in <span class="fa fa-user"></span>
-                            </a>
+                        <li class="nav-item" id="item">
+                            
                         </li>
                     </ul>
                 </div>
@@ -231,5 +229,23 @@
     <!--All pages js-->
     <script src="js/main.js"></script>
 </body>
+
+<script type="text/javascript">
+
+	$(document).ready(() => {
+		let login = '<a class="nav-link" href="login.php"> Prijavite se <span class="fa fa-user"></span></a>';
+		let logout = '<a class="nav-link" href="includes/logout.inc.php"> Odjava <span class="fa fa-user"></span></a>';
+		let item = $('#item');
+		$.post("includes/userExist.inc.php")
+			.done(function (result) {
+				if (result == 'true') {
+					item.append(logout);
+				} else {
+					item.append(login);
+				}
+			});
+	});
+
+</script>
 
 </html>

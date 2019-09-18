@@ -88,20 +88,15 @@ session_start();
                         if (isset($_SESSION['userId'])) {
 
                            echo '<li class="nav-item">
-                            <a class="nav-link" href="includes/logout.inc.php">Logout<span class="fa fa-user"></span></a>
+                            <a class="nav-link" href="includes/logout.inc.php">Odjava<span class="fa fa-user"></span></a>
                         </li>';
                         } else {
                             echo ' <li class="nav-item">
-                            <a class="nav-link active" href="login.php">Log-in<span class="fa fa-user"></span></a>
+                            <a class="nav-link active" href="login.php">Prijavite se<span class="fa fa-user"></span></a>
                         </li>';
                         }
                         ?>
 
-                        <li class="nav-item">
-                            <a class="nav-link active" href="signup.php">
-                                Registracija
-                            </a>
-                        </li>
                     </ul>
                 </div>
             </nav>

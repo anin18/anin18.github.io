@@ -8,10 +8,10 @@ require 'header.php';
     <section class="login" id="login">
         <div class="main-sweet-wall">
             <div class="login-wrapper position-absolute text-center p-3 p-md-4">
-                
+
                 <?php
                 if (isset($_SESSION['userId'])) {
-                    echo '<h1> Uspesno ste ulogovani!</h1>';
+                    echo '<h1> Dobrodosli, ' . $_SESSION['userUid'] . '. Uspesno ste ulogovani!</h1>';
                 } else {
                     echo '<h2>Prijava</h2>';
                     echo '<h5 class="mb-4 mb-sm-5">Ako niste nas clan, mozete se registrovati <a
@@ -28,6 +28,16 @@ require 'header.php';
                 </div>
                 <button class="btn btn-lg" type="submit" name="login-submit">Prijavi se</button>
             </form>';
+
+                    if (isset($_GET['error'])) {
+                        if ($_GET['error'] == 'wrongpwd') {
+                            echo '<p> Neispravna lozinka. </p>';
+                        } elseif($_GET['error'] == 'invaliduid'){
+                            echo '<p> Neispravna lozinka. </p>';
+                        } elseif ($_GET['error'] == 'emptyfields') {
+                            echo '<p> Neispravna lozinka. </p>';
+                        } 
+                    }
                 }
                 ?>
 
