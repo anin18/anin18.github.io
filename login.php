@@ -30,15 +30,14 @@ require 'header.php';
             </form>';
 
                     if (isset($_GET['error'])) {
-                        if ($_GET['error'] == 'wrongpwd') {
-                            echo '<p> Neispravna lozinka. </p>';
-                        } elseif($_GET['error'] == 'invaliduid'){
-                            echo '<p> Neispravna lozinka. </p>';
+                        if ($_GET['error'] == 'wrongpwd' || $_GET['error'] == 'nouser') {
+                            echo '<p> Korisničko ime i/ili lozinka je pogrešno </p>';
                         } elseif ($_GET['error'] == 'emptyfields') {
-                            echo '<p> Neispravna lozinka. </p>';
+                            echo '<p> Popunite prazna polja. </p>';
                         } 
                     }
                 }
+                ?>
                 ?>
 
             </div>
