@@ -41,9 +41,11 @@ require 'header.php';
                         echo '<p> Invalid email!</p>';
                     } elseif ($_GET['error'] == 'passwordcheck') {
                         echo '<p> Your passwords do not match! </p>';
+                    } elseif ($_GET['error'] == 'weakpassword') {
+                        echo '<p> Password should be at least 8 characters in length and should include at least one upper case letter and one number! </p>';
                     } elseif ($_GET['error'] == 'usertaken') {
                         echo '<p> Username is already taken! </p>';
-                    }
+                    } 
                 }
 
                 if (isset($_GET['signup'])) {
