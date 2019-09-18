@@ -4,10 +4,10 @@ if (isset($_POST['signup-submit'])) {
 
     require "dbh.inc.php";
 
-    $username = isset($_POST["uid"])? $_POST["uid"]: "";
-    $email = isset($_POST["mail"])? $_POST["mail"]: "";
-    $password = isset($_POST["pwd"])? $_POST["pwd"]: "";
-    $passwordRepeat = isset($_POST["pwd-repeat"])? $_POST["pwd-repeat"]: "";
+    $username = isset($_POST["uid"])? htmlspecialchars(strip_tags($_POST["uid"]))  : "";
+    $email = isset($_POST["mail"])? htmlspecialchars(strip_tags($_POST["mail"]))  : "";
+    $password = isset($_POST["pwd"])? htmlspecialchars(strip_tags($_POST["pwd"]))  : "";
+    $passwordRepeat = isset($_POST["pwd-repeat"])? htmlspecialchars(strip_tags($_POST["pwd-repeat"]))  : "";
     
 
     if (empty($username) || empty($email) || empty($password) || empty($passwordRepeat)) {
@@ -21,6 +21,9 @@ if (isset($_POST['signup-submit'])) {
         exit();
     } elseif (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
         header("Location: ../signup.php?error=invaliduid&mail=" . $email);
+        exit();
+    } elseif (!preg_match('@[A-Z]@', $password) || !preg_match('@[a-z]@', $password) || !preg_match('@[0-9]@', $password) || !$specialChars || strlen($password) < 8) {
+        header("Location: ../signup.php?error=weakpassword&uid=" . $username . "&mail" . $email);
         exit();
     } elseif ($password !== $passwordRepeat) {
         header("Location: ../signup.php?error=passwordcheck&uid=" . $username . "&mail" . $email);
