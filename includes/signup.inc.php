@@ -22,7 +22,7 @@ if (isset($_POST['signup-submit'])) {
     } elseif (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
         header("Location: ../signup.php?error=invaliduid&mail=" . $email);
         exit();
-    } elseif (!preg_match('@[A-Z]@', $password) || !preg_match('@[a-z]@', $password) || !preg_match('@[0-9]@', $password) || !$specialChars || strlen($password) < 8) {
+    } elseif (!preg_match('@[A-Z]@', $password) || !preg_match('@[a-z]@', $password) || !preg_match('@[0-9]@', $password) || strlen($password) < 8) {
         header("Location: ../signup.php?error=weakpassword&uid=" . $username . "&mail" . $email);
         exit();
     } elseif ($password !== $passwordRepeat) {
