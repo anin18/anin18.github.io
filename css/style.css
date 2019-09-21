@@ -260,7 +260,8 @@ div.cake_kids{
    } 
 
 .cakes img{
-    height: 100%;
+    min-height: 100%;
+    display:block;
     border: 4px double darkmagenta;
 }
 
