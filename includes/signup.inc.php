@@ -8,6 +8,7 @@ if (isset($_POST['signup-submit'])) {
     $email = isset($_POST["mail"])? htmlspecialchars(strip_tags($_POST["mail"]))  : "";
     $password = isset($_POST["pwd"])? htmlspecialchars(strip_tags($_POST["pwd"]))  : "";
     $passwordRepeat = isset($_POST["pwd-repeat"])? htmlspecialchars(strip_tags($_POST["pwd-repeat"]))  : "";
+    $trn_date = date("Y-m-d H:i:s");
     
 
     if (empty($username) || empty($email) || empty($password) || empty($passwordRepeat)) {
@@ -29,7 +30,7 @@ if (isset($_POST['signup-submit'])) {
         header("Location: ../signup.php?error=passwordcheck&uid=" . $username . "&mail" . $email);
         exit();
     } else {
-        $sql = "SELECT uidUsers FROM users WHERE uidUsers=?";
+        $sql = "SELECT username FROM users WHERE username=?";
         $stmt = mysqli_stmt_init($conn);
 
         if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -44,7 +45,7 @@ if (isset($_POST['signup-submit'])) {
                 header("Location: ../signup.php?error=usertaken&mail=" . $email);
                 exit();
             } else {
-                $sql = "INSERT INTO users (uidUsers, emailUsers, pwdUsers) VALUES (?, ?, ?)";
+                $sql = "INSERT INTO users (username, email, password, trn_date) VALUES (?, ?, ?, ?)";
                 $stmt = mysqli_stmt_init($conn);
                 if (!mysqli_stmt_prepare($stmt, $sql)) {
                     header("Location: ../signup.php?error=sqlerror");
@@ -53,7 +54,7 @@ if (isset($_POST['signup-submit'])) {
 
                     $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
 
-                    mysqli_stmt_bind_param($stmt, "sss", $username, $email, $hashedPwd);
+                    mysqli_stmt_bind_param($stmt, "ssss", $username, $email, $hashedPwd, $trn_date);
                     mysqli_stmt_execute($stmt);
                     
                     header("Location: ../signup.php?signup=success");

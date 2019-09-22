@@ -3,10 +3,14 @@
 $servername = "localhost";
 $dBUsername = "root";
 $dBPassword = "";
-$dBName = "loginsystem";
+$dBName = "register";
 
 $conn = mysqli_connect($servername,$dBUsername, $dBPassword, $dBName);
 
-if(!$conn){
-    die("Connection failed: ". mysqli_connect_error());
-} 
+if (mysqli_connect_errno()) {
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+    die();
+}
+
+date_default_timezone_set('Europe/Belgrade');
+$error = "";
