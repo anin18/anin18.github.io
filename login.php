@@ -18,15 +18,16 @@ require 'header.php';
                     href="signup.php">ovde</a>.</h5>';
                     echo '<form action="includes/login.inc.php" method="POST" class="login-form m-auto">
                 <div class="form-group mb-5">
-                    <input type="text" class="form-control" placeholder="Username" name="mailuid">
+                    <input type="text" class="form-control" placeholder="Username/E-mail" name="mailuid">
                 </div> 
                 <div class="form-group mb-5">
                     <input type="password" class="form-control" placeholder="Password" name="pwd">
                 </div>
                 <div class="text-left lost-password  mb-4">
-                    Zaboravili ste sifru?
+                    <a href="forgot-password.php"> Zaboravili ste sifru? </a>
                 </div>
                 <button class="btn btn-lg" type="submit" name="login-submit">Prijavi se</button>
+                
             </form>';
 
                     if (isset($_GET['error'])) {
@@ -34,7 +35,7 @@ require 'header.php';
                             echo '<p> Korisničko ime i/ili lozinka je pogrešno </p>';
                         } elseif ($_GET['error'] == 'emptyfields') {
                             echo '<p> Popunite prazna polja. </p>';
-                        } 
+                        }
                     }
                 }
                 ?>
@@ -43,8 +44,8 @@ require 'header.php';
         </div>
     </section>
     <!--SECTION LOGIN ENDS HERE-->
+</main>
 
-
-    <?php
-    require 'footer.php';
-    ?>
+<?php
+require 'footer.php';
+?>
