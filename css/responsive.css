@@ -35,10 +35,15 @@
 .title::after{
     right:10%;
   }
-
-.registration-wrapper {
-  width:80%;
+.login-wrapper{
+  top:25%;
 }
+.registration-wrapper,
+.login-wrapper{
+  left:10%;
+  width: 80%;
+}
+  
 }
 
 
@@ -150,9 +155,6 @@
   display: none;
 }
 
-.registration-wrapper {
-  width:70%;
-}
 main.blog-main{
   height: 1800px;
 }
@@ -176,6 +178,11 @@ main.blog-main{
     .submenu-item{
         border-bottom: none;
         padding:  0 8px;
+    }
+    .registration-wrapper,
+     .login-wrapper{
+      left:15%;
+      width: 70%;
     }
 
 /*-------------CAKES (gallery)----------------*/
@@ -202,7 +209,9 @@ main.blog-main{
   .blog-item img{
     max-height: 250px;
   }
-
+  .login-wrapper{
+    top:20% !important;
+  }
 }
 
 
