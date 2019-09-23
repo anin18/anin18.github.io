@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Sep 22, 2019 at 09:07 PM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.1.32
+-- Host: 127.0.0.1:3306
+-- Generation Time: Sep 23, 2019 at 09:31 PM
+-- Server version: 5.7.26
+-- PHP Version: 7.2.18
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,10 +25,39 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `comments`
+--
+
+DROP TABLE IF EXISTS `comments`;
+CREATE TABLE IF NOT EXISTS `comments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `content` text COLLATE utf8_unicode_ci NOT NULL,
+  `author` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `username` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`id`, `content`, `author`, `created_at`, `username`) VALUES
+(1, 'Prvi komentar', 'Ana', '2019-09-23 20:24:57', ''),
+(2, 'Drugi komentar', 'Ana', '2019-09-23 20:36:54', ''),
+(23, 'Drugi komentar', 'Ana', '2019-09-23 21:22:12', 'pera'),
+(24, 'Drugi komentar', 'Ana', '2019-09-23 21:22:44', 'pera'),
+(25, 'Drugi komentar', 'Ana', '2019-09-23 21:25:29', 'pera'),
+(26, 'Drugi komentar', 'Ana', '2019-09-23 21:25:36', 'pera');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `password_reset_temp`
 --
 
-CREATE TABLE `password_reset_temp` (
+DROP TABLE IF EXISTS `password_reset_temp`;
+CREATE TABLE IF NOT EXISTS `password_reset_temp` (
   `email` varchar(250) NOT NULL,
   `key` varchar(250) NOT NULL,
   `expDate` datetime NOT NULL
@@ -53,40 +82,23 @@ INSERT INTO `password_reset_temp` (`email`, `key`, `expDate`) VALUES
 -- Table structure for table `users`
 --
 
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(50) COLLATE utf32_unicode_ci NOT NULL,
   `email` varchar(50) COLLATE utf32_unicode_ci NOT NULL,
   `password` longtext COLLATE utf32_unicode_ci NOT NULL,
-  `trn_date` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_unicode_ci;
+  `trn_date` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf32 COLLATE=utf32_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `trn_date`) VALUES
-(1, 'marija', 'marijaculafic88@gmail.com', '$2y$10$znTAxXE8uqF4nkUwsWBggunixpx4JXAhY3Wlc4o2sxgYILQIhjWce', '2019-09-22 21:04:36');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+(1, 'marija', 'marijaculafic88@gmail.com', '$2y$10$znTAxXE8uqF4nkUwsWBggunixpx4JXAhY3Wlc4o2sxgYILQIhjWce', '2019-09-22 21:04:36'),
+(2, 'pera', 'pera@gmail.com', '$2y$10$w/dEVfJwGKA186W0FPcsQuJoRlghqcLztV8PRzH6ZGi15FTS99jb.', '2019-09-23 21:22:32');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
