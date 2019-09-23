@@ -7,7 +7,7 @@ require 'header.php';
     <!--SECTION LOGIN STARTS HERE-->
     <section class="login" id="login">
         <div class="main-sweet-wall">
-            <div class="login-wrapper position-absolute text-center p-3 p-md-4">
+            <div class="login-wrapper position-absolute text-center p-3 p-md-4 scale-in-center">
 
                 <?php
                 if (isset($_SESSION['userId'])) {
@@ -20,7 +20,7 @@ require 'header.php';
                 <div class="form-group mb-5">
                     <input type="text" class="form-control" placeholder="Username/E-mail" name="mailuid">
                 </div> 
-                <div class="form-group mb-5">
+                <div class="form-group mb-4">
                     <input type="password" class="form-control" placeholder="Password" name="pwd">
                 </div>
                 <div class="text-left lost-password  mb-4">
