@@ -5,7 +5,7 @@ require 'header.php';
 <!--SECTION REGISTER STARTS HERE-->
 <section class="register" id="register">
     <div class="main-sweet-wall">
-        <div class="registration-wrapper position-absolute text-center p-3 p-md-4">
+        <div class="registration-wrapper position-absolute text-center p-3 scale-in-center">
             <h2>Registracija</h2>
             <h5 class="mb-4 mb-sm-5">Ako ste nas clan, mozete se prijaviti <a href="login.php">ovde</a>.</h5>
             <form action="includes/signup.inc.php" method='POST' class="registration-form m-auto">
@@ -22,7 +22,7 @@ require 'header.php';
                         <div class="form-group mb-4">
                             <input type="password" name="pwd" class="form-control" placeholder="Password">
                         </div>
-                        <div class="form-group mb-5">
+                        <div class="form-group mb-4">
                             <input type="password" name="pwd-repeat" class="form-control" placeholder="Repeat password">
                         </div>
                     </div>
