@@ -33,6 +33,14 @@ a:hover {
 .text-warning{
     color:#b2af34 !important;
 }
+.btn-warning,
+.bg-warning{
+    background-color: #b2b034 !important;
+    border-color: #b2b034 !important;
+}
+.btn-warning:hover{
+    opacity: 0.7 !important;
+}
 /*--------------------HEADER STYLE----------------------------*/
 /*header{
     background-color: #851e72;
@@ -301,7 +309,8 @@ section.login .main-sweet-wall{
     color:#b2af34;
     font-size: 1.25rem;
 }
-.login-form  input{
+.login-form  input,
+.comment-item input{
     background-color: #851e72;
     border:none;
     border-bottom: 1px solid #936693;
@@ -370,10 +379,17 @@ section.login .main-sweet-wall{
     border-bottom: 1px solid #4F3900;
     color:white;
 }
-
+.comments-item-form input{
+    border-bottom: 2px solid #b2b034 !important;
+    background-color: transparent !important;
+}
+.comments-item-form input::placeholder{
+    color: #4F3900;
+}
 .registration-form input:hover,
 .registration-form  input:active,
-.registration-form  input:focus{
+.registration-form  input:focus,
+.comments-item-form input:focus{
     background-color: #b2af34;
     border:none;
     border-bottom: 1px solid #851e72;
@@ -381,6 +397,13 @@ section.login .main-sweet-wall{
 }
 .registration-form  input::placeholder{
     color: #745b17;
+}
+.comments-item-form .form-control{
+    border-radius: 0 !important;
+    color: #222;
+}
+.comments-item-form .form-control:focus{
+    box-shadow: none !important;
 }
 .registration-form .btn{
     color:#851e72;
@@ -390,9 +413,9 @@ section.login .main-sweet-wall{
     color: #b2af34;
     background-color:#851e72;
 }
-/*------------------BLOG PAGE------------------- */
+/*------------------COMMENTS PAGE------------------- */
 
-.blog-sweet-wall{
+.comments-sweet-wall{
     background-image: url('../images/assets/pink1.jpg');
     background-attachment: fixed;
     height: 500px; 
@@ -401,30 +424,35 @@ section.login .main-sweet-wall{
     background-size: cover;
 
 }
-.main-blog-info {
+.main-comments-info {
     top:20%;
     left:50%;
     transform: translateX(-50%);
     border-radius: 50px/30px;
-    border-top:10px dotted #b2af34;
-    border-bottom:10px dotted #b2af34;
     background-color: #b2b034;
 }
 
-main.blog-main{
+main.comments-main{
     height: 1400px;
 }
-.blog-item{
+.comment-item{
+    margin:0px auto;
     border:6px ridge darkmagenta;
     background-color:rgba(139, 0, 139, 0.1);
     border-radius: 10px;
 }
 
-.blog-item img{
-  max-width:100% !important;
-  display: block;
-  box-shadow: 4px 4px 10px #000;
+.comment-wrapper .comments-form {
+    width: 100%;
+    padding: 10px 10px 0 10px;
+    background-color: rgba(139, 0, 139, 0.1);
 }
-.blog-item-title a{
-    font-size: 1.3rem;
-}
+    .comment-wrapper .comments-form .form-control::placeholder {
+      color: #ABABAB; 
+    }
+    .comment-wrapper .comments-form button {
+      width: 100%; 
+    }
+      .comment-wrapper .comments-form button:hover {
+        opacity: 0.7;
+     }
