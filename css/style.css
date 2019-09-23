@@ -1,4 +1,5 @@
 
+
 /*------------------------GENERAL STYLE-----------------------*/
 @import url('https://fonts.googleapis.com/css?family=Cookie|PT+Serif:400,400i|Zilla+Slab:300,400,400i,500&display=swap');
 /*
@@ -125,8 +126,8 @@ header{
 
 .main-sweet-info {
     top:30%;
-    left:50%;
-    transform: translateX(-50%);
+    left:20%;
+    /*transform: translateX(-50%);*/
     background-image: linear-gradient(to right top, #5f198c, #691887, #711782, #78187d, #7e1a78, #882080, #932689, #9e2c91, #b038aa, #c144c3, #d151df, #e05ffb);
     background-attachment: fixed;
     border-radius: 70px/30px;
@@ -170,7 +171,7 @@ header{
     bottom:85%;
     right:90%;
     font-size: 3rem;
-    color:#ffc107 ;
+    color: #b2b034 ;
  }
 
  /*----------------CONTACT-----------------*/
@@ -264,17 +265,26 @@ div.cake_kids{
     display:block;
     border: 4px double darkmagenta;
 }
-
+.cakes > div{
+    overflow: hidden !important;
+}
+.cakes img {
+    transition: 0.5s linear;
+}
+.cakes img:hover{
+    transform: scale(1.1);
+    opacity: 0.8;
+}
 /*---------------------LOGIN---------------------------*/
 
 section.login .main-sweet-wall{
-    height: 540px;
+    height: 640px;
 }
 .login-wrapper {
-    top:20%;
-    left:50%;
-    width:70%;
-    transform: translateX(-50%);
+    top:25%;
+    left:5%;
+    width:90%;
+    /*transform: translateX(-50%);*/
     background-color: #851e72;
     background-attachment: fixed;
     border:10px dotted  #b2af34; 
@@ -335,10 +345,10 @@ section.login .main-sweet-wall{
 }
 /*-----------------registration form--------------------*/
 .registration-wrapper{
+        text-align: center;
         top:25%;
-        left:50%;
-        width:90%;
-        transform: translateX(-50%);
+        left:5%;
+        width: 90%;
         background-color:  #b2af34; 
         background-attachment: fixed;
         border:10px dotted #851e72;
