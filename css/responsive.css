@@ -158,7 +158,9 @@
 main.blog-main{
   height: 1800px;
 }
-
+.comments-form .form-group{
+  margin-bottom: 0 !important;
+}
 }
 
 @media(min-width:992px){
