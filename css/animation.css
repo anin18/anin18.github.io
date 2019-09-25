@@ -278,3 +278,27 @@
        transform:scale(1); 
     }
 }
+.opacityEntrance{
+  animation-name: opacityEntrance;
+  animation-duration: 1.5s;
+
+}
+
+@keyframes opacityEntrance{
+  0%{
+      opacity:0;
+  }
+  100%{
+     opacity:1; 
+  
+  }
+}
+@-webkit-keyframes opacityEntrance{
+  0%{
+    opacity:0;
+}
+100%{
+   opacity:1; 
+  
+ }
+}
