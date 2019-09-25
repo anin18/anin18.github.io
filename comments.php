@@ -5,26 +5,24 @@ require 'header.php';
 
     <!--MAIN STARTS HERE-->
     <main style="background-image: url('images/assets/pink1.jpg')" class="comments-main">
-        <!--SECTION BLOG-SWEET STARTS HERE-->
-        <section class="comments-sweet">
-            <div class="comments-sweet-wall">
-                <div class="main-comments-info p-3 position-absolute text-center pinkdark">
-                    <h1 class="mb-5 ">Dobrodosli na blog Sweet Cakes!</h1>
+       <!--SECTION COMMENTS-SWEET-WALL STARTS HERE-->
+            <section class="comments-sweet-wall">
+                <div class="main-comments-info opacityEntrance p-3 position-absolute text-center pinkdark">
+                    <h1 class="mb-3 mb-md-5 ">Dobrodosli na blog Sweet Cakes!</h1>
                     <h5 class="mb-0 ">Ovde možete da pročitate nešto više o tortama, saznate o procesu proizvodnje,
                         malim tajnama koje nas čine izuzetnim.</h5>
                 </div>
-            </div>
-        </section>
-        <!--SECTION MAIN-SWEET ENDS HERE-->
+            </section>
+        <!--SECTION COMMENTS-SWEET-WALL ENDS HERE-->
 
         <!--SECTION COMMENTS-WRAPPER STARTS HERE-->
 
         <section class="comment-wrapper mb-3 mb-sm-4 container">
 
             <!--FORMA COMMENT-FORM starts here-->
-            <form class="comments-form p-1 mb-3 mb-sm-4" method="GET" action="">
+            <form class="comments-form zoom p-1 mb-3 mb-sm-4" method="GET" action="">
                 <div class="row justify-content-between no-gutters">
-                    <div class="col-md-8">
+                    <div class="col-md-7 col-xl-8">
                         <div class="form-group">
                             <input type="text" class="form-control" name="message" placeholder="Ostavi komentar"
                                 value="">
@@ -37,7 +35,7 @@ require 'header.php';
                             <div class="error-msg"></div>
                         </div>
                     </div>
-                    <div class=" col-5 col-xm-4 col-md-1">
+                    <div class=" col-5 col-xm-4 col-md-2 col-xl-1">
                         <button type="submit" name="addNewComment" class="btn btn-warning text-white">Pošalji</button>
                     </div>
 
