@@ -66,7 +66,7 @@
     } 
     .nav-item .nav-link{
       text-decoration-style: double;
-      font-size:1.4rem; 
+      font-size:1.3rem; 
     }  
     .submenu-item{
         border-bottom: 2px solid lightgrey !important;
@@ -166,10 +166,6 @@ main.blog-main{
 @media(min-width:992px){
     *{
         font-size: 16px;
-    }
-
-   .nav-item .nav-link{
-      font-size: 1.5rem;
     }
     .submenu{
       left: -260%;
