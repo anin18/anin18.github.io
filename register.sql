@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 23, 2019 at 09:31 PM
+-- Generation Time: Oct 05, 2019 at 08:39 PM
 -- Server version: 5.7.26
 -- PHP Version: 7.2.18
 
@@ -30,25 +30,23 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `comments`;
 CREATE TABLE IF NOT EXISTS `comments` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `content` text COLLATE utf8_unicode_ci NOT NULL,
-  `author` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `username` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `comment_id` int(11) NOT NULL AUTO_INCREMENT,
+  `reply_id` int(11) DEFAULT NULL,
+  `post_id` int(11) NOT NULL,
+  `timestamp` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `name` varchar(255) NOT NULL,
+  `message` text NOT NULL,
+  PRIMARY KEY (`comment_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `comments`
 --
 
-INSERT INTO `comments` (`id`, `content`, `author`, `created_at`, `username`) VALUES
-(1, 'Prvi komentar', 'Ana', '2019-09-23 20:24:57', ''),
-(2, 'Drugi komentar', 'Ana', '2019-09-23 20:36:54', ''),
-(23, 'Drugi komentar', 'Ana', '2019-09-23 21:22:12', 'pera'),
-(24, 'Drugi komentar', 'Ana', '2019-09-23 21:22:44', 'pera'),
-(25, 'Drugi komentar', 'Ana', '2019-09-23 21:25:29', 'pera'),
-(26, 'Drugi komentar', 'Ana', '2019-09-23 21:25:36', 'pera');
+INSERT INTO `comments` (`comment_id`, `reply_id`, `post_id`, `timestamp`, `name`, `message`) VALUES
+(1, NULL, 999, '2019-10-05 22:33:11', 'Pera', 'Prva poruka'),
+(2, 1, 999, '2019-10-05 22:33:26', 'John Doe', 'Prvi odgovor Peri'),
+(3, NULL, 999, '2019-10-05 22:34:20', 'Pera', 'drugi komentar');
 
 -- --------------------------------------------------------
 
@@ -75,6 +73,22 @@ INSERT INTO `password_reset_temp` (`email`, `key`, `expDate`) VALUES
 ('mara@mara.com', '4a6330bc363811bab89789ba6ce80d59c13db77021', '2019-09-21 16:21:01'),
 ('mara@mara.com', '4a6330bc363811bab89789ba6ce80d59be0f02d87f', '2019-09-21 16:22:37'),
 ('mara@mara.com', '4a6330bc363811bab89789ba6ce80d591cd76e530c', '2019-09-21 16:31:19');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `replays`
+--
+
+DROP TABLE IF EXISTS `replays`;
+CREATE TABLE IF NOT EXISTS `replays` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `content` text COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `comment_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `comment_id` (`comment_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
