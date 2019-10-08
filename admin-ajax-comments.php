@@ -24,9 +24,15 @@ switch ($_POST['req']) {
         <p class="date small mb-2"> 
         <span class="ctime"><?=$time?></span>
         </p>
-      </div>
+	  </div>
+	  <div class="col-md-9">
+			  <form class="form-inline comments-item-form justify-content-between align-items-start py-2">	
+			  <div class="form-group w-75">	 
 			<div class="cmessage"><?=$message?></div>
 			<input type="button" class="cbutton" value="Reply" onclick="comments.reply(<?=$cid?>, <?=$rid?>)"/>
+			</div>
+			</div>
+			</form>
 			<div id="reply-<?=$cid?>"></div>
         </div>
     </article>
