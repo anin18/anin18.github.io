@@ -23,6 +23,9 @@ a:hover {
 .brown{
     color:#4F3900;
 }
+.btn-pinkdark{
+    background-color:#851e72;
+}
 .pinkdark{
     color:#851e72;
 }
@@ -413,27 +416,26 @@ section.login .main-sweet-wall{
     color: #b2af34;
     background-color:#851e72;
 }
-/*------------------COMMENTS PAGE------------------- */
-
-.comments-sweet-wall,
-.comment-wrapper{
-    background-image: url('../images/assets/pink1.jpg');
-    background-attachment: fixed;
-    height: 460px; 
-    background-position:center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
+/*------------------COMMENTSLIN (unlogged) PAGE------------------- */
+.main-comments{
+    position: relative;
+    height: 100vh;
 }
-.comment-wrapper{
-    height: 1000px;
-}
+
 .main-comments-info {
-    top:20%;
+    top:30% !important;
     left:50%;
     transform: translateX(-50%);
     border-radius: 50px/30px;
     background-color: #b2b034;
+}
+.main-comments-info .log:hover{
+    opacity:0.8;
+}
+
+.comments-sweet-wall{
+    height: 460px; 
+    background-size: cover;
 }
 
 main.comments-main{
@@ -452,7 +454,13 @@ main.comments-main{
     /*background-color: rgba(139, 0, 139, 0.24);*/
     background-color: #851e72;
 }
-
+.edit-comments-form {
+    width: 100%;
+    margin: 250px 0 !important;
+    background-color: #b2af34;
+    position: relative !important;
+    top:40% !important;
+}
 .comments-form input:focus{
     border:none;
     box-shadow: none;
@@ -466,3 +474,66 @@ main.comments-main{
 .comments-form button:hover {
         opacity: 0.7;
      }
+
+     /*-------------COMMENTS LOGGED PAGE---------------*/
+ 
+     .comments-logged-sweet-wall{
+        height: 460px; 
+        background-size: cover;
+    }
+    .main-logged-comments-info{
+        top:21% !important;
+        left:50%;
+        transform: translateX(-50%);
+        border-radius: 50px/30px;
+        background-color: #b2b034;
+    }
+     #reply-main {
+        background-color: #851e72;
+        border:10px dotted  #b2af34; 
+        border-radius: 15px;
+     }
+     #reply-main textarea{
+         background-color:  #851e72;
+     }
+     #reply-main textarea{
+        color: white;
+     }
+     #reply-main textarea.form-control{
+         border-color:transparent !important;
+         border-bottom: 1px solid #936693 !important;
+     }
+     #reply-main label {
+        color: #cfaccfe3;
+     }
+     #reply-main #username{
+        border-color:transparent !important;
+         border-bottom : 1px solid #936693 !important;
+     }
+
+     #reply-main .cbutton{
+        color: #b2af34;
+        border: 1px solid  #b2af34;
+    }
+    #reply-main .cbutton:hover{
+        background-color: #b2af34 !important;
+        color:#533454;
+    }
+
+    .comment-item .cbutton{
+        background-color: #b2af34 !important;
+        color:#533454;
+        cursor: pointer;
+    }
+   .comment-item .cbutton:hover{
+        background-color: #851e72 !important;
+        color:#b2af34 !important; 
+        border-bottom: 2px solid transparent !important;
+    }
+   
+.comments-item-form .cmessage{
+    background-color: transparent;
+    border-color: transparent !important;
+    font-size:0.85rem;
+    line-height: 1rem;
+}
