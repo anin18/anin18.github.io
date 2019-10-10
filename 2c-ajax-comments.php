@@ -17,29 +17,31 @@ switch ($_POST['req']) {
 	$comments = $pdo->get($_POST['post_id']);
 	
 	function show ($cid, $rid, $name, $time, $message, $indent = 0) { ?>
-	
-	<div class="comment-inner">
-	<article class="comment-item mb-3 p-3">
-	<div class="mb-2 ccomment<?= $indent ? " creply" : "" ?>"><div>
-     
-		<span class="cname commentator"><?=$name?></span>
-		<p class="date small mb-2">
-		<span class="ctime text-secondary"><?=$time?></span>
-	</p>
-	  </div>
-	  		<div class="col-md-9">
-			  <form class="form-inline comments-item-form justify-content-between align-items-start py-2">	
-			  <div class="form-group w-75">	    
-			<div class="cmessage form-control w-100 mb-md-0"><?=$message?></div>
-			<input type="toggle" class="cbutton btn btn-warning text-white ml-md-5" value="Reply" onclick="comments.reply(<?=$cid?>, <?=$rid?>)"/>
-			</div>
-			</form>
-			<div id="reply-<?=$cid?>"></div>
-			</div>
-		</div>
-		</article>
-		</div>
-		<?php }
+
+<div class="comment-inner">
+    <article class="comment-item mb-3 p-3">
+        <div class="mb-2 ccomment<?= $indent ? " creply" : "" ?>">
+            <div>
+
+                <span class="cname"><?=$name?></span>
+                <p class="date small mb-2">
+                    <span class="ctime text-secondary"><?=$time?></span>
+                </p>
+            </div>
+            <div class="col-md-9">
+                <form class="form-inline comments-item-form justify-content-between align-items-start py-2">
+                    <div class="form-group w-75">
+                        <div class="cmessage w-100 mb-5"><?=$message?></div>
+                        <input type="toggle" readonly class="cbutton btn " value="Odgovori"
+                            onclick="comments.reply(<?=$cid?>, <?=$rid?>)" />
+                    </div>
+                </form>
+                <div id="reply-<?=$cid?>"></div>
+            </div>
+        </div>
+    </article>
+</div>
+<?php }
 		if (is_array($comments)) { foreach ($comments as $c) {
 			show($c['comment_id'], $c['comment_id'], $c['name'], $c['timestamp'], $c['message']);
 			if (is_array($c['reply'])) { foreach ($c['reply'] as $r) {
@@ -50,25 +52,33 @@ switch ($_POST['req']) {
 
 	/* [SHOW REPLY FORM] */
   case "reply": ?>
-		<form onsubmit="return comments.add(this)" class="creplyform form-inline comments-item-form justify-content-between align-items-start py-2">
-	  <!-- <h1>Leave a comment</h1> -->
-	  	
-	  <input type="hidden" name="reply_id" value="<?=$_POST['reply_id']?>"/>
-	  <div class="row justify-content-between no-gutters">
-	  <div class="col-md-8">
-	  <div class="form-group">
-	  <textarea name="message" class="form-control w-100 mb-md-0" placeholder="Message" required></textarea>
-      <input type="text" class="form-control btn btn-warning text-white ml-md-5" name="name" placeholder="Name" required/>
-	
-	  <input type="submit" class="cbutton" value="Post Comment"/>
-	  </div>
-	  </div>
-	  </div>
-	</form>
-	
-		<?php break;
+<form onsubmit="return comments.add(this)"
+    class="creplyform form-inline comments-item-form justify-content-between align-items-start py-2">
+    <!-- <h1>Leave a comment</h1> -->
 
-	/* [ADD COMMENT] */
+    <input type="hidden" name="reply_id" value="<?=$_POST['reply_id']?>" />
+    <div class="container">
+        <div class="row justify-content-center  no-gutters p-2 ">
+            <div class="col-md-8">
+                <div class="form-group mb-2">
+                    <label for="username">Korisnicko ime:</label>
+                    <input type="text" id="username" class="form-control text-info ml-md-5" name="name" required />
+                </div>
+                <div class="form-group mb-5">
+                    <label for="content-message">Unesite ovde svoju poruku:</label>
+                    <textarea name="message"  rows="3" class="form-control w-100 mb-md-0" id="content-message"
+                        required></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="cbutton btn" value="Posalji" />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<?php break;
+
 	case "add":
 		echo $pdo->add($_POST['post_id'], $_POST['name'], $_POST['message'], $_POST['reply_id']) ? "OK" : "ERR";
 		break;
