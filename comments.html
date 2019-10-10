@@ -9,18 +9,15 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+  
     <!--Custom page CSS-->
     <link rel="stylesheet" type="text/css" href="css/fonts.css">
-    <link rel="stylesheet" type="text/css" href="css/animation.css">
-
-    <!--Theme CSS-->
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/animation.css">
 
     <!--Hamburger menu CSS-->
     <link href="css/hamburgers.css" rel="stylesheet">
-
 
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -30,9 +27,9 @@
 
 <body>
     <!--HEADER STARTS HERE-->
-    <header class="fixed-top py-0 mb-5">
+    <header class="fixed-top">
         <div class="container">
-            <nav class="navbar navbar-expand-md  p-0 ">
+            <nav class="navbar navbar-expand-md  pb-3 ">
                 <a class="navbar-brand py-0" href="#">
                     <img src="images/assets/logo.png" alt="logo">
                 </a>
@@ -40,7 +37,7 @@
                 <!--HAMBURGER MENU STARTS HERE-->
                 <button class="hamburger hamburger--spin navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#main_menu" aria-controls="main_menu" aria-expanded="false"
-                    aria-label="Toggle navigation" type=" button">
+                    aria-label="Toggle navigation"" type=" button">
                     <span class="hamburger-box">
                         <span class="hamburger-inner"></span>
                     </span>
@@ -52,46 +49,45 @@
                 <div class="collapse navbar-collapse" id="main_menu">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="index.html#beggin">Naslovna <span
-                                    class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="index.html">Naslovna <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#about">O nama</a>
+                            <a class="nav-link" href="index.html#about">O nama</a>
                         </li>
-                        <li class="nav-item position-relative">
-                            <a class="nav-link" href="cakes.html">Torte
+                        <li class="nav-item position-relative cake">
+                            <a class="nav-link " href="cakes.html">Torte
                                 <span class="fa fa-caret-down position-absolute"></span> </a>
-                            <!--SUBMENU STARTS HERE-->
+                                 <!--SUBMENU STARTS HERE-->
                             <ul class="submenu list-unstyled">
                                 <li class="submenu-item">
-                                    <a href="cakes_kids.html" class="submenu-link ">Za decu</a>
+                                    <a href="cakes_kids.html" class="submenu-link cake_kids">Za decu</a>
                                 </li>
                                 <li class="submenu-item">
-                                    <a href="cakes_18th.html" class="submenu-link ">Za 18.rodjendan</a>
+                                    <a href="cakes_18th.html" class="submenu-link cake_18th">Za 18.rodjendan</a>
                                 </li>
                                 <li class="submenu-item">
-                                    <a href="cakes_wedding.html" class="submenu-link">Za vencanje</a>
+                                    <a href="cakes_wedding.html" class="submenu-link cake_wedding">Za vencanje</a>
                                 </li>
                                 <li class="submenu-item">
-                                    <a href="cakes_creative.html" class="submenu-link">Razni oblici</a>
+                                    <a href="cakes_creative.html" class="submenu-link cake_creative">Razni oblici</a>
                                 </li>
                                 <li class="submenu-item">
-                                    <a href="cakes_adults.html" class="submenu-link ">Svecane</a>
+                                    <a href="cakes_adults.html" class="submenu-link cake_adult">Svecane</a>
                                 </li>
                                 <li class="submenu-item">
-                                    <a href="my_cookie.html" class="submenu-link">Kolaci</a>
+                                    <a href="my_cookie.html" class="submenu-link my_cookie" href="#">Kolaci</a>
                                 </li>
                             </ul>
                             <!--SUBMENU ENDS HERE-->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Komentari</a>
+                            <a class="nav-link active" href="comments.html">Komentari</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="index.html#contact">Kontakt</a>
                         </li>
                         <li class="nav-item" id="item">
-
+                            
                         </li>
                     </ul>
                 </div>
@@ -102,84 +98,18 @@
     <!--HEADER ENDS HERE-->
 
     <!--MAIN STARTS HERE-->
-    <main style="background-image: url('images/assets/pink1.jpg')" class="comments-main">
-        <!--SECTION BLOG-SWEET STARTS HERE-->
-        <section class="comments-sweet">
-            <div class="comments-sweet-wall">
-                <div class="main-comments-info p-3 position-absolute text-center pinkdark">
-                    <h1 class="mb-5 ">Dobrodosli na blog Sweet Cakes!</h1>
-                    <h5 class="mb-0 ">Kako biste ostavivli komentar neophodno je da se ulogujete</h5>
-                    <a type="btn" href="./login.php" class="log btn btn-lg">Uloguje se</a>
-                </div>
-            </div>
-        </section>
-        <!--SECTION MAIN-SWEET ENDS HERE-->
-
-        <!--SECTION COMMENTS-WRAPPER STARTS HERE-->
-
-        <section class="comment-wrapper mb-3 mb-sm-4 container">
-
-            <!--FORMA COMMENT-FORM starts here-->
-            <form class="comments-form p-1 mb-3 mb-sm-4" method="post" action="">
-                <div class="row justify-content-between no-gutters">
-                    <div class="col-md-8">
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="message" placeholder="Ostavi komentar"
-                                value="">
-                            <div class="error-msg"></div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="name" placeholder="Korisnicko ime" value="">
-                            <div class="error-msg"></div>
-                        </div>
-                    </div>
-                    <div class=" col-5 col-xm-4 col-md-1">
-                        <button type="submit" class="btn btn-warning text-white">Pošalji</button>
-                    </div>
-
-                </div>
-            </form>
-            <!--FORMA COMMENT-FORM ends here-->
-
-            <!--COMMENT INNER STARTS HERE-->
-            <div class="comment-inner">
-                <article class="comment-item mb-3 p-3">
-                    <h6 class="commentator">Jelena11</h6>
-                    <p class="date small mb-2">
-                        <span class="text-secondary">12.01.2019.</span>
-                    </p>
-                    <p class=" mb-2">Torte bas lepo izgledaju. Interesuje me kako se narucuju?</p>
-                    <div class="row">
-                        <div class="col-md-9">
-                            <div class="likes-counter">
-                                <a href="#" class="like-comment mb-1 mb-md-0 mr-2">
-                                    <span class="fa fa-smile-o text-success"> 220</span>
-                                </a>
-                                <a href="#" class="dislike-comment mb-1 mb-md-0">
-                                    <span class="fa fa-frown-o text-danger"> 5</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-9">
-                            <form method="post" action="" class="form-inline comments-item-form justify-content-between align-items-start py-2">
-                                <div class="form-group w-75">
-                                    <input type="text" name="answer" class="form-control w-100 mb-md-0"
-                                        placeholder="Odgovori">
-                                    <div class="error-msg"></div>
-                                </div>
-                                <button type="submit" class="btn btn-warning text-white ml-md-5">Pošalji</button>
-                            </form>
-                        </div>
-                    </div>
-                </article>
-            </div>
-              <!--COMMENT INNER ENDS HERE-->
-        </section>
-        <!--SECTION COMMENTS-WRAPPER ENDS HERE-->
-
-
+    <main class="main-comments" style="background-image: url('images/assets/pink1.jpg')">
+       
+        <!-- MAIN-COMMENTS-INFO STARTS HERE-->
+      
+        <div class="main-comments-info p-3 position-absolute text-center opacityEntrance pinkdark">
+            <h1 class="mb-5 ">Dobrodosli na blog Sweet Cakes!</h1>
+            <h5 class="mb-3 ">Neophodno je da se ulogujete, da biste ostavili komentar.</h5>
+            <a type="btn" href="./login.php" class="log btn btn-pinkdark text-warning">Ulogujte se</a>
+        </div>
+   
+        <!--MAIN-COMMENTS-INFO ENDS HERE-->
+    
     </main>
     <!--MAIN ENDS HERE-->
 
