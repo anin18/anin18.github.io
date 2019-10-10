@@ -7,11 +7,11 @@ require 'header.php';
     <!--SECTION LOGIN STARTS HERE-->
     <section class="login" id="login">
         <div class="main-sweet-wall">
-            <div class="login-wrapper position-absolute text-center p-3 p-md-4 scale-in-center">
+            <div class="login-wrapper position-absolute text-center p-3 p-md-5 scale-in-center">
 
                 <?php
                 if (isset($_SESSION['userId'])) {
-                    echo '<h1> Dobrodosli, ' . $_SESSION['userUid'] . '. Uspesno ste ulogovani!</h1>';
+                    echo '<h2 class="text-info"> Dobrodosli, ' . $_SESSION['userUid'] . '.<br> Uspesno ste ulogovani!</h2>';
                 } else {
                     echo '<h2>Prijava</h2>';
                     echo '<h5 class="mb-4 mb-sm-5">Ako niste nas clan, mozete se registrovati <a
