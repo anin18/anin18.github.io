@@ -5,7 +5,7 @@ require 'header.php';
 <!--SECTION REGISTER STARTS HERE-->
 <section class="register" id="register">
     <div class="main-sweet-wall">
-        <div class="registration-wrapper position-absolute text-center p-3 scale-in-center">
+        <div class="registration-wrapper position-absolute text-center p-3 scale-down-center">
             <h2>Registracija</h2>
             <h5 class="mb-4 mb-sm-5">Ako ste nas clan, mozete se prijaviti <a href="login.php">ovde</a>.</h5>
             <form action="includes/signup.inc.php" method='POST' class="registration-form m-auto">
