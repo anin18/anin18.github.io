@@ -154,13 +154,12 @@
 .cake .submenu{
   display: none;
 }
+/*---------------COMMENS LOGGED---------------*/
+.comments-logged-sweet-wall{
+  height: 340px; 
+  background-size: cover;
+   }
 
-main.blog-main{
-  height: 1800px;
-}
-.comments-form .form-group{
-  margin-bottom: 0 !important;
-}
 }
 
 @media(min-width:992px){
@@ -210,6 +209,12 @@ main.blog-main{
   .login-wrapper{
     top:20% !important;
   }
+  /*---------------COMMENS LOGGED---------------*/
+.comments-logged-sweet-wall{
+  height: 360px; 
+  background-size: cover;
+   }
+
 }
 
 
@@ -218,5 +223,10 @@ main.blog-main{
     max-width:60%;
     max-height: 60%;
 }
+/*---------------COMMENTS LOGGED---------------*/
+.comments-logged-sweet-wall{
+  height: 323px; 
+  background-size: cover;
+   }
 
 }
