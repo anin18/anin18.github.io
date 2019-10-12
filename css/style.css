@@ -441,13 +441,14 @@ section.login .main-sweet-wall{
 main.comments-main{
     height: 1400px;
 }
+/*
 .comment-item{
     margin:0px auto;
     border:6px ridge #851e72;
     background-color:rgba(139, 0, 139, 0.1);
     border-radius: 10px;
 }
-
+*/
  .comments-form {
     width: 100%;
     padding: 10px 10px 0 10px;
@@ -530,7 +531,12 @@ main.comments-main{
         color:#b2af34 !important; 
         border-bottom: 2px solid transparent !important;
     }
-   
+    .comment-item .ccomment{
+        margin:0px auto;
+        border:6px ridge #851e72;
+        background-color:rgba(139, 0, 139, 0.1);
+        border-radius: 10px;
+    }
 .comments-item-form .cmessage{
     background-color: transparent;
     border-color: transparent !important;
