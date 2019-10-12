@@ -19,8 +19,8 @@ switch ($_POST['req']) {
 	function show ($cid, $rid, $name, $time, $message, $indent = 0) { ?>
 
 <div class="comment-inner">
-    <article class="comment-item mb-3 p-3">
-        <div class="mb-2 ccomment<?= $indent ? " creply" : "" ?>">
+    <article class="comment-item p-3">
+        <div class=" ccomment  p-2 p-sm-3<?= $indent ? " creply p-1 p-sm-2 ml-4 ml-sm-5" : "" ?>">
             <div>
 
                 <span class="cname"><?=$name?></span>
@@ -32,7 +32,7 @@ switch ($_POST['req']) {
                 <form class="form-inline comments-item-form justify-content-between align-items-start py-2">
                     <div class="form-group w-75">
                         <div class="cmessage w-100 mb-5"><?=$message?></div>
-                        <input type="toggle" readonly class="cbutton btn " value="Odgovori"
+                        <input type="toggle" readonly="" class="cbutton btn " value="Odgovori"
                             onclick="comments.reply(<?=$cid?>, <?=$rid?>)" />
                     </div>
                 </form>
