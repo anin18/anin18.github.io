@@ -15,12 +15,20 @@ if (
     );
     $row = mysqli_num_rows($query);
     if ($row == "") {
-        $error .= '<h2>Invalid Link</h2>
-<p>The link is invalid/expired. Either you did not copy the correct link
-from the email, or you have already used the key in which case it is 
-deactivated.</p>
-<p><a href="http://localhost/zavrsniProjekat/index.php">
-Click here</a> to reset password.</p>';
+        $error .= '
+        <main>     
+            <section class="login" id="login">
+                <div class="main-sweet-wall">
+                    <div class="login-wrapper position-absolute text-center p-3 p-md-4">
+                        <h2>Neispravan link</h2>
+                        <p>Link je neispravan ili je istekao. 
+                            Proverite da li ste dobro kopirali link iz mail-a ili ste već iskoristili ovaj ključ za deakivaciju.
+                        </p>
+                        <p><a href="http://localhost/zavrsniProjekat/index.php">Kliknite ovde</a> da resetujete šifru.</p>
+                    </div>
+                </div>
+            </section>
+        </main>';
     } else {
         $row = mysqli_fetch_assoc($query);
         $expDate = $row['expDate'];
@@ -33,17 +41,24 @@ Click here</a> to reset password.</p>';
                 <section class="login" id="login">
                     <div class="main-sweet-wall">
                         <div class="login-wrapper position-absolute text-center p-3 p-md-4">
-                            <form method="post" action="" name="update">
-                                <input type="hidden" name="action" value="update" />
-                                <br /><br />
-                                <label><strong>Enter New Password:</strong></label><br />
-                                <input type="password" name="pass1" maxlength="15" required />
-                                <br /><br />
-                                <label><strong>Re-Enter New Password:</strong></label><br />
-                                <input type="password" name="pass2" maxlength="15" required />
-                                <br /><br />
-                                <input type="hidden" name="email" value="<?php echo $email; ?>" />
-                                <input type="submit" value="Reset Password" />
+                            <form method="post" action="" name="update" class="login-form m-auto">
+                                <div class="form-group mb-4">
+                                    <input type="hidden" name="action" value="update" class="form-control">
+                                </div>
+                                <div class="form-group mb-4">
+                                    <label>Unesite novu šifru:</label>
+                                    <input type="password" name="pass1" class="form-control" required>
+                                </div>
+                                <div class="form-group mb-4">
+                                    <label>Ponovo unesite novu šifru:</label>
+                                    <input type="password" name="pass2" class="form-control" required>
+                                </div>
+                                <div class="form-group mb-4">
+                                    <input type="hidden" name="email" class="form-control" value="<?php echo $email; ?>">
+                                </div>
+                                <div class="form-group mb-4">
+                                    <input type="submit" name="reset-pwd" value="Resetujte šifru" class="btn btn-lg">
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -51,9 +66,17 @@ Click here</a> to reset password.</p>';
             </main>
 <?php
         } else {
-            $error .= "<h2>Link Expired</h2>
-<p>The link is expired. You are trying to use the expired link which 
-as valid only 24 hours (1 days after request).<br /><br /></p>";
+            $error .='
+            <main>     
+                <section class="login" id="login">
+                    <div class="main-sweet-wall">
+                        <div class="login-wrapper position-absolute text-center p-3 p-md-4">
+                            <h2>Link je istekao!</h2>
+                            <p>Ovaj link je istekao. Validan je samo 24 časa nakon zahteva.<br /><br /></p>
+                        </div>
+                    </div>
+                </section>
+            </main>';
         }
     }
     if ($error != "") {
@@ -70,11 +93,28 @@ if (
     $pass2 = mysqli_real_escape_string($conn, $_POST["pass2"]);
     $email = $_POST["email"];
     $curDate = date("Y-m-d H:i:s");
-    if ($pass1 != $pass2) {
-        $error .= "<p>Password do not match, both password should be same.<br /><br /></p>";
+    $error = "";
+    $class = '
+    <main>     
+        <section class="login" id="login">
+            <div class="main-sweet-wall">
+                <div class="login-wrapper position-absolute text-center p-3 p-md-4">';
+    $class2 ='   
+                </div>
+            </div>
+        </section>
+    </main>';
+    
+    if (!preg_match('@[A-Z]@', $pass1) || !preg_match('@[a-z]@', $pass1) || !preg_match('@[0-9]@', $pass1) || strlen($pass1) < 8) {
+        $error .= $class .'<h5> Koristite najmanje 8 znakova, uključujući velika i mala slova, i najmanje jednu cifru! 
+        <a href ="javascript:history.back()">Vratite se nazad.</a></h5>'.$class2;
+    } elseif ($pass1 != $pass2) {
+        $error .= $class .'<h5>Šifre se ne poklapaju. Obe šifre moraju biti iste.
+        <a href ="javascript:history.back()">Vratite se nazad.</a></h5>'.$class2;
     }
+
     if ($error != "") {
-        echo "<div class='error'>" . $error . "</div><br />";
+        echo $error ."<br />";
     } else {
         $pass1 = password_hash($pass1, PASSWORD_DEFAULT);;
         mysqli_query(
@@ -85,13 +125,13 @@ WHERE `email`='" . $email . "';"
 
         mysqli_query($conn, "DELETE FROM `password_reset_temp` WHERE `email`='" . $email . "';");
 
-        echo '<main>     
+        echo '
+    <main>     
         <section class="login" id="login">
             <div class="main-sweet-wall">
                 <div class="login-wrapper position-absolute text-center p-3 p-md-4">
-                <p>Congratulations! Your password has been updated successfully.</p>
-<p><a href="http://localhost/zavrsniProjekat/login.php">
-Click here</a> to Login.</p>
+                    <h5>Čestitamo! Vaša šifra je uspešno promenjena.</h5>
+                    <h5><a href="http://localhost/zavrsniProjekat/login.php">Kliknite ovde</a> za prijavu.</h5>
                 </div>
             </div>
         </section>

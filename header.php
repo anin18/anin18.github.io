@@ -85,7 +85,7 @@ session_start();
                             <a class="nav-link" href="commentslin.html">Komentari</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html#blog">Kontakt</a>
+                            <a class="nav-link" href="index.html#contact">Kontakt</a>
                         </li>
                         <?php
                         if (isset($_SESSION['userId'])) {

@@ -8,13 +8,32 @@ if (isset($_POST["email"]) && (!empty($_POST["email"]))) {
     $email = filter_var($email, FILTER_SANITIZE_EMAIL);
     $email = filter_var($email, FILTER_VALIDATE_EMAIL);
     if (!$email) {
-        $error .= "<p>Invalid email address please type a valid email address!</p>";
+        $error .= '
+        <main>     
+            <section class="login" id="login">
+                <div class="main-sweet-wall">
+                    <div class="login-wrapper position-absolute text-center p-3 p-md-4">
+                        <p>Neispravna email adresa!</p>
+                    </div>
+                </div>
+            </section>
+        </main>';
     } else {
         $sel_query = "SELECT * FROM `users` WHERE email='" . $email . "'";
         $results = mysqli_query($conn, $sel_query);
         $row = mysqli_num_rows($results);
         if ($row == "") {
-            $error .= "<p>No user is registered with this email address!</p>";
+            $error .=
+                '<main>     
+                <section class="login" id="login">
+                    <div class="main-sweet-wall">
+                        <div class="login-wrapper position-absolute text-center p-3 p-md-4">
+                            <h5>Nijedan korisnik nije registrovan sa ovom e-mail adresom!
+                            <a href ="javascript:history.back()">Vratite se nazad.</a></h5>
+                        </div>
+                    </div>
+                </section>
+            </main>';
         }
     }
     if ($error != "") {
@@ -56,7 +75,7 @@ your account and change your security password as someone may have guessed it.</
         $subject = "Password Recovery - AllPHPTricks.com";
 
         $email_to = $email;
-        $mailFrom = "anmcakes123@gmail.com"; //preimenuj ovo promenljivu
+        $mailFrom = "anmcakes123@gmail.com";
         require("PHPMailer/PHPMailerAutoload.php");
         $mail = new PHPMailer();
         $mail->IsSMTP();
@@ -79,16 +98,16 @@ your account and change your security password as someone may have guessed it.</
             echo "Mailer Error: " . $mail->ErrorInfo;
         } else {
 
-            echo '<main>     
-        <section class="login" id="login">
-            <div class="main-sweet-wall">
-                <div class="login-wrapper position-absolute text-center p-3 p-md-4">
-                <p>An email has been sent to you with instructions on how to reset your password.</p>
-
-                </div>
-            </div>
-        </section>
-    </main>';
+            echo '
+            <main>     
+                <section class="login" id="login">
+                    <div class="main-sweet-wall">
+                        <div class="login-wrapper position-absolute text-center p-3 p-md-4">
+                            <h5>Poslat je e-mail sa instrukcijama za resetovanje šifre.</h5>
+                        </div>
+                    </div>
+                </section>
+            </main>';
         }
     }
 } else {
@@ -100,14 +119,15 @@ your account and change your security password as someone may have guessed it.</
         <section class="login" id="login">
             <div class="main-sweet-wall">
                 <div class="login-wrapper position-absolute text-center p-3 p-md-4">
-
-                    <form method="post" action="" name="reset"><br /><br />
-                        <label><strong>Enter Your Email Address:</strong></label><br /><br />
-                        <input type="email" name="email" placeholder="username@email.com" />
-                        <br /><br />
-                        <input type="submit" value="Reset Password" />
+                    <form method="post" action="" name="reset" class="login-form m-auto">
+                        <div class="form-group mb-4">
+                            <label><strong>Unesite vašu e-mail adresu:</strong></label> <br><br>
+                            <input type="email" name="email" class="form-control" placeholder="username@email.com">
+                        </div>
+                        <div class="form-group mb-4">
+                        <button class="btn btn-lg" type="submit">Resetujte šifru</button>
+                        </div>
                     </form>
-
                 </div>
             </div>
         </section>
