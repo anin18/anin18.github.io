@@ -14,9 +14,6 @@ if (isset($_POST['signup-submit'])) {
     if (empty($username) || empty($email) || empty($password) || empty($passwordRepeat)) {
         header("Location: ../signup.php?error=emptyfields&uid=" . $username . "&mail=" . $email);
         exit();
-    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z0-9]*$/", $username)) {
-        header("Location: ../signup.php?error=invalidmailuid");
-        exit();
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         header("Location: ../signup.php?error=invalidmail&uid=" . $username);
         exit();
