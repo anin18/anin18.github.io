@@ -9,6 +9,12 @@ session_start();
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Ana, Marija,Nina">
+    <meta name="description" content="Sweet Cakes-prezentacija torti">
+    <meta name="keywords" content="torte, kolaci, porodicna firma.../">
+
+    <!--Favicon-->
+    <link rel="icon" type="icon/png" href="images/favicon/favicon-16x16.png">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
