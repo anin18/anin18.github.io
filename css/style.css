@@ -1,5 +1,3 @@
-
-
 /*------------------------GENERAL STYLE-----------------------*/
 @import url('https://fonts.googleapis.com/css?family=Cookie|PT+Serif:400,400i|Zilla+Slab:300,400,400i,500&display=swap');
 /*
@@ -45,9 +43,6 @@ a:hover {
     opacity: 0.7 !important;
 }
 /*--------------------HEADER STYLE----------------------------*/
-/*header{
-    background-color: #851e72;
-}*/
 
 header,
 .header-active{
@@ -138,12 +133,9 @@ header{
 .main-sweet-info {
     top:30%;
     left:20%;
-    /*transform: translateX(-50%);*/
     background-image: linear-gradient(to right top, #5f198c, #691887, #711782, #78187d, #7e1a78, #882080, #932689, #9e2c91, #b038aa, #c144c3, #d151df, #e05ffb);
     background-attachment: fixed;
     border-radius: 70px/30px;
-    /*border:8px dotted white;*/
-  
 }
 
 .main-sweet-info h1,
@@ -196,12 +188,10 @@ header{
  }
 
 .map{
-    
     height: 0;
 	overflow: hidden;
 	padding-top: 60%; /* aspect ratio */
-	position: relative;
-    
+	position: relative; 
  }
  .googlemap{
     border: 0;
@@ -295,7 +285,6 @@ section.login .main-sweet-wall{
     top:25%;
     left:5%;
     width:90%;
-    /*transform: translateX(-50%);*/
     background-color: #851e72;
     background-attachment: fixed;
     border:10px dotted  #b2af34; 
@@ -423,7 +412,7 @@ section.login .main-sweet-wall{
 }
 
 .main-comments-info {
-    top:30% !important;
+    top:20% !important;
     left:50%;
     transform: translateX(-50%);
     border-radius: 50px/30px;
@@ -441,14 +430,7 @@ section.login .main-sweet-wall{
 main.comments-main{
     height: 1400px;
 }
-/*
-.comment-item{
-    margin:0px auto;
-    border:6px ridge #851e72;
-    background-color:rgba(139, 0, 139, 0.1);
-    border-radius: 10px;
-}
-*/
+
  .comments-form {
     width: 100%;
     padding: 10px 10px 0 10px;
@@ -542,4 +524,16 @@ main.comments-main{
     border-color: transparent !important;
     font-size:0.85rem;
     line-height: 1rem;
+}
+/*---------------comments.php---------------*/
+.comments-wall{
+    height: 500px; 
+    background-size: cover;
+}
+
+.comments-item-form input.input-comment{
+    background-color: #851e72;
+    border:none;
+    border-bottom: 1px solid #936693 !important;
+    color:white;
 }
