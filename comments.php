@@ -1,14 +1,17 @@
+<?php require_once 'process.php';
+ ?>
 <html lang="en">
+
 <head>
-  <title>PHP CRUD</title>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>PHP CRUD</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
- 
 
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
@@ -30,12 +33,13 @@
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
-     <!--HEADER STARTS HERE-->
-     <header class="fixed-top py-0 mb-5">
+    <!--HEADER STARTS HERE-->
+    <header class="fixed-top py-0 ">
         <div class="container">
             <nav class="navbar navbar-expand-md  p-0 ">
-                <a class="navbar-brand py-0" href="#">
+                <a class="navbar-brand py-0 buzz" href="#">
                     <img src="images/assets/logo.png" alt="logo">
                 </a>
 
@@ -56,7 +60,7 @@
                                     class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#about">O nama</a>
+                            <a class="nav-link" href="index.html#about">O nama</a>
                         </li>
                         <li class="nav-item position-relative">
                             <a class="nav-link" href="cakes.html">Torte
@@ -101,118 +105,119 @@
     <!--HEADER ENDS HERE-->
 
     <!--MAIN STARTS HERE-->
-    <main style="background-image: url('images/assets/pink1.jpg')" class="comments-main">
+    <main class="comments-main">
         <!--SECTION BLOG-SWEET STARTS HERE-->
         <section class="comments-sweet">
-            <div class="comments-sweet-wall">
+            <div class="comments-wall mb-5 mb-lg-1">
                 <div class="main-comments-info p-3 position-absolute text-center pinkdark">
-                    <h1 class="mb-5 ">Dobrodosli na blog Sweet Cakes!</h1>
+                    <h1 class="mb-3 mb-md-5 ">Dobrodosli na blog Sweet Cakes!</h1>
                     <h5 class="mb-0 ">Ovde možete da pročitate nešto više o tortama, saznate o procesu proizvodnje,
                         malim tajnama koje nas čine izuzetnim.</h5>
-               
                 </div>
             </div>
-
         </section>
         <!--SECTION MAIN-SWEET ENDS HERE-->
-        <?php require_once 'process.php'; ?>
 
-<?php
+
+        <?php
 if (isset($_SESSION['message'])) : ?>
 
+        <?php endif ?>
 
-<?php endif ?>
-<div class="form-inline justify-content-center">
-<section class="comment-wrapper mb-3 mb-sm-4 container">
-    <form action="" method="post">
-    <input type="hidden" name="id" value="<?php echo $id; ?>">
-    <div class="comments-form p-1 mb-3 mb-sm-4">
-    <div class="row justify-content-between no-gutters">
-    <div class="col-md-7">
-    <div class="form-group">
-        <label for="">Comment</label>
-        <input type="text" name="comment" class="form-control" value="<?php echo $comment; ?>" placeholder="Enter your comment">
-      </div>
-      <div class="col-md-3">
-      <div class="form-group">
-        <label for="">Name</label>
-        <input type="text" name="name" class="form-control" value="<?php echo $name; ?> "placeholder="Enter your name">
-      </div>
-      </div>
-      <div class="form-group">
-      <?php
-      if ($update == true) :
-      ?>
-          <button type="submit" class="btn btn-warning text-white ml-md-5" name="update">Update</button>
-        <?php else : ?>
-          <button type="submit" class="btn btn-warning text-white ml-md-5" name="save">Save</button>
-        <?php endif; ?>
-      </div>
-    </form>
-    <?php
+        <section class="mb-3 mb-sm-4 container">
+            <div id="reply-main" class="mb-4 mb-sm-5">
+                <form action="" method="post" class="comments-item-form justify-content-between align-items-start py-2">
+                    <input type="hidden" name="id" value="<?php echo $id; ?>">
+                    <div class="container">
+                        <div class="row justify-content-center no-gutters p-2">
+                            <div class="col-md-8">
+                                <div class="form-group mb-2">
+                                    <label for="username">Korisnicko ime: *</label>
+                                    <input type="text" name="name"  class="form-control text-white" id="username"
+                                        value="<?php echo $name; ?>" required>
+                                </div>
+                                <div class="form-group mb-4">
+                                    <label class="mb-2 mb-sm-4" for="comment">Ostavite komentar: *</label>
+                                    <input type="text" name="comment" class="input-comment form-control text-white" id="comment"
+                                        value="<?php echo $comment; ?>" required>
+                                </div>
+                                <div class="form-group">
+                                    <?php
+                                if ($update == true) :
+                            ?>
+                                    <button type="submit" class="btn btn-warning text-white "
+                                        name="update">Izmeni</button>
+                                    <?php else : ?>
+                                    <button type="submit" class="btn btn-warning text-white"
+                                        name="save">Posalji</button>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </form>
+                <?php
   $mysqli = new mysqli('localhost', 'root', '', 'register') or die(mysqli_error($mysqli));
   $result = $mysqli->query("SELECT * FROM data") or die($mysqli->error);
         //pre_r($result);          
-  ?>
-
-  <div class="row justify-content-center">
-    <table class="table">
-      <thead>
-        <tr>
-         
-          <th>Comment</th>
-          <th>Name</th>
-          <th colspan="2"></th>
-        </tr>
-      </thead>
+?>
+            </div>
 
 
-      <?php
-      while ($row = $result->fetch_assoc()) : ?>
-        <tr>
-          
-          <td> <?php echo $row['comment']; ?></td>
-          <td> <?php echo $row['name']; ?></td>
-          <td> <?php echo $row['times']; ?></td>
-          <td>
-            <a href="comments.php?edit=<?php echo $row['id']; ?>" class="btn btn-warning text-white ml-md-5">Edit</a>
-            <a href="comments.php?delete=<?php echo $row['id']; ?>" class="btn btn-warning text-white ml-md-5">Delete</a>
-          </td>
-        </tr>
-      <?php endwhile; ?>
-    </table>
-  </div>
+            <div id="comments">
+                <?php while ($row = $result->fetch_assoc()) : ?>
+                <article class="comment-item p-3">
+                    <div class="ccomment p-2 p-sm-3 ">
+                        <div>
+                            <span class="cname font-weight-bold"><?php echo $row['name']; ?></span>
+                            <p class="date small mb-2">
+                                <span class="ctime text-secondary"><?php echo $row['times']; ?></span>
+                            </p>
+                        </div>
+                        <div class="mb-5">
+                            <p><?php echo $row['comment']; ?></p>
+                        </div>
+                        <div>
+                            <a href="comments.php?edit=<?php echo $row['id']; ?>"
+                                class="btn btn-warning btn-sm text-white">Izmeni</a>
+                            <a href="comments.php?delete=<?php echo $row['id']; ?>"
+                                class="btn btn-warning btn-sm text-white ml-md-4">Obrisi</a>
+                        </div>
+                    </div>
+                </article>
+                <?php endwhile; ?>
 
-  <?php
+
+                <?php
   function pre_r($array)
   {
     echo '<pre>';
     print_r($array);
     echo '</pre>';
   }
-  ?>
+?>
+            </div>
+        </section>
 
-      </div>
-      </div>
-      </div>
-      </section>
-     
-     
-     
-  </div>
-
-<div class="container">
-          
     </main>
     <!--MAIN ENDS HERE-->
 
 
- 
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"
+        integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous">
+    </script>
     <!--FOOTER ENDS HERE-->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -223,22 +228,24 @@ if (isset($_SESSION['message'])) : ?>
     <script src="js/jquery.waypoints.js" type="text/javascript"></script>
     <script src="js/counterup.js" type="text/javascript"></script>
     <!--All pages js-->
-    <script src="js/main.js"></script>  
+    <script src="js/main.js"></script>
 </body>
 
 <script type="text/javascript">
-    $(document).ready(() => {
-        let login = '<a class="nav-link" href="login.php"> Prijavite se <span class="fa fa-user"></span></a>';
-        let logout = '<a class="nav-link" href="includes/logout.inc.php"> Odjava <span class="fa fa-user"></span></a>';
-        let item = $('#item');
-        $.post("includes/userExist.inc.php")
-            .done(function (result) {
-                if (result == 'true') {
-                    item.append(logout);
-                } else {
-                    item.append(login);
-                }
-            });
-    });
+$(document).ready(() => {
+    let login = '<a class="nav-link" href="login.php"> Prijavite se <span class="fa fa-user"></span></a>';
+    let logout =
+        '<a class="nav-link" href="includes/logout.inc.php"> Odjava <span class="fa fa-user"></span></a>';
+    let item = $('#item');
+    $.post("includes/userExist.inc.php")
+        .done(function(result) {
+            if (result == 'true') {
+                item.append(logout);
+            } else {
+                item.append(login);
+            }
+        });
+});
 </script>
+
 </html>
