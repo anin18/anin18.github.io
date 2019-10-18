@@ -88,7 +88,7 @@ session_start();
                             <!--SUBMENU ENDS HERE-->
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="commentslin.html">Komentari</a>
+                            <a class="nav-link" href="comments.php">Komentari</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="index.html#contact">Kontakt</a>
