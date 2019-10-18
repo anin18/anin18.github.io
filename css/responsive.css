@@ -43,7 +43,10 @@
   left:10%;
   width: 80%;
 }
-  
+  .comments-wall{
+  height: 400px;  
+}
+    
 }
 
 
@@ -228,5 +231,8 @@
   height: 323px; 
   background-size: cover;
    }
-
+ .comments-wall{
+    height: 360px; 
+   
+  }
 }
