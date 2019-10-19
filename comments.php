@@ -56,34 +56,34 @@
                 <div class="collapse navbar-collapse" id="main_menu">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="index.html#beggin">Naslovna <span
+                            <a class="nav-link" href="index.php#beggin">Naslovna <span
                                     class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html#about">O nama</a>
+                            <a class="nav-link" href="index.php#about">O nama</a>
                         </li>
                         <li class="nav-item position-relative">
-                            <a class="nav-link" href="cakes.html">Torte
+                            <a class="nav-link" href="cakes.php">Torte
                                 <span class="fa fa-caret-down position-absolute"></span> </a>
                             <!--SUBMENU STARTS HERE-->
                             <ul class="submenu list-unstyled">
                                 <li class="submenu-item">
-                                    <a href="cakes_kids.html" class="submenu-link ">Za decu</a>
+                                    <a href="cakes_kids.php" class="submenu-link ">Za decu</a>
                                 </li>
                                 <li class="submenu-item">
-                                    <a href="cakes_18th.html" class="submenu-link ">Za 18.rodjendan</a>
+                                    <a href="cakes_18th.php" class="submenu-link ">Za 18.rodjendan</a>
                                 </li>
                                 <li class="submenu-item">
-                                    <a href="cakes_wedding.html" class="submenu-link">Za vencanje</a>
+                                    <a href="cakes_wedding.php" class="submenu-link">Za vencanje</a>
                                 </li>
                                 <li class="submenu-item">
-                                    <a href="cakes_creative.html" class="submenu-link">Razni oblici</a>
+                                    <a href="cakes_creative.php" class="submenu-link">Razni oblici</a>
                                 </li>
                                 <li class="submenu-item">
-                                    <a href="cakes_adults.html" class="submenu-link ">Svecane</a>
+                                    <a href="cakes_adults.php" class="submenu-link ">Svecane</a>
                                 </li>
                                 <li class="submenu-item">
-                                    <a href="my_cookie.html" class="submenu-link">Kolaci</a>
+                                    <a href="my_cookie.php" class="submenu-link">Kolaci</a>
                                 </li>
                             </ul>
                             <!--SUBMENU ENDS HERE-->
@@ -92,7 +92,7 @@
                             <a class="nav-link" href="#">Komentari</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html#contact">Kontakt</a>
+                            <a class="nav-link" href="index.php#contact">Kontakt</a>
                         </li>
                         <li class="nav-item" id="item">
                         </li>
@@ -248,4 +248,4 @@ $(document).ready(() => {
 });
 </script>
 
-</html>
+</php>

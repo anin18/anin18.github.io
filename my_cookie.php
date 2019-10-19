@@ -43,7 +43,7 @@
 				<!--HAMBURGER MENU STARTS HERE-->
 				<button class="hamburger hamburger--spin navbar-toggler" type="button" data-toggle="collapse"
 					data-target="#main_menu" aria-controls="main_menu" aria-expanded="false"
-					aria-label="Toggle navigation"" type=" button">
+					aria-label="Toggle navigation" type=" button">
 					<span class="hamburger-box">
 						<span class="hamburger-inner"></span>
 					</span>
@@ -55,43 +55,43 @@
 				<div class="collapse navbar-collapse" id="main_menu">
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item active">
-							<a class="nav-link " href="index.html#beggin">Naslovna <span
+							<a class="nav-link " href="index.php#beggin">Naslovna <span
 									class="sr-only">(current)</span></a>
 						</li>
 						<li class="nav-item">
-							<a href="index.html#about" class="nav-link">O nama</a>
+							<a href="index.php#about" class="nav-link">O nama</a>
 						</li>
 						<li class="nav-item position-relative cake-nav">
-							<a class="nav-link active" href="cakes.html">Torte
+							<a class="nav-link active" href="cakes.php">Torte
 								<span class="fa fa-caret-down position-absolute"></span> </a>
 							 <!--SUBMENU STARTS HERE-->
 							 <ul class="submenu submenu-visible list-unstyled">
                                 <li class="submenu-item">
-                                    <a href="cakes_kids.html" class="submenu-link cake_kids">Za decu</a>
+                                    <a href="cakes_kids.php" class="submenu-link cake_kids">Za decu</a>
                                 </li>
                                 <li class="submenu-item">
-                                    <a href="cakes_18th.html" class="submenu-link cake_18th">Za 18.rodjendan</a>
+                                    <a href="cakes_18th.php" class="submenu-link cake_18th">Za 18.rodjendan</a>
                                 </li>
                                 <li class="submenu-item">
-                                    <a href="cakes_wedding.html" class="submenu-link cake_wedding">Za vencanje</a>
+                                    <a href="cakes_wedding.php" class="submenu-link cake_wedding">Za vencanje</a>
                                 </li>
                                 <li class="submenu-item">
-                                    <a href="cakes_creative.html" class="submenu-link cake_creative">Razni oblici</a>
+                                    <a href="cakes_creative.php" class="submenu-link cake_creative">Razni oblici</a>
                                 </li>
                                 <li class="submenu-item">
-                                    <a href="cakes_adults.html" class="submenu-link cake_adult">Svecane</a>
+                                    <a href="cakes_adults.php" class="submenu-link cake_adult">Svecane</a>
                                 </li>
                                 <li class="submenu-item submenu-item-active">
-                                    <a href="my_cookie.html" class="submenu-link" href="#">Kolaci</a>
+                                    <a href="my_cookie.php" class="submenu-link" href="#">Kolaci</a>
                                 </li>
                             </ul>
                             <!--SUBMENU ENDS HERE-->
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="comments.html">Komentari</a>
+							<a class="nav-link" href="comments.php">Komentari</a>
 						</li>
 						<li class="nav-item">
-							<a href="index.html#contact" class="nav-link">Kontakt</a>
+							<a href="index.php#contact" class="nav-link">Kontakt</a>
 						</li>
 						<li class="nav-item" id="item">
 							
