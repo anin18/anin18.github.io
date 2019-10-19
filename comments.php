@@ -248,4 +248,4 @@ $(document).ready(() => {
 });
 </script>
 
-</php>
+</html>

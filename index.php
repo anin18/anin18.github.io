@@ -45,7 +45,7 @@
                 <!--HAMBURGER MENU STARTS HERE-->
                 <button class="hamburger hamburger--spin navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#main_menu" aria-controls="main_menu" aria-expanded="false"
-                    aria-label="Toggle navigation" type=" button">
+                    aria-label="Toggle navigation"" type=" button">
                     <span class="hamburger-box">
                         <span class="hamburger-inner"></span>
                     </span>
@@ -256,4 +256,4 @@
 
 </script>
 </body>
-</php>
+</html>

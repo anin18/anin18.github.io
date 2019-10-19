@@ -253,4 +253,4 @@
 
 </script>
 
-</php>
+</html>

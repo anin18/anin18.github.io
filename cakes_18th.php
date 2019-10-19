@@ -6,7 +6,7 @@
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta http-equiv="Content-Type" content="text/php; charset=UTF-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -42,7 +42,7 @@
 				<!--HAMBURGER MENU STARTS HERE-->
 				<button class="hamburger hamburger--spin navbar-toggler" type="button" data-toggle="collapse"
 					data-target="#main_menu" aria-controls="main_menu" aria-expanded="false"
-					aria-label="Toggle navigation" type=" button">
+					aria-label="Toggle navigation"" type=" button">
 					<span class="hamburger-box">
 						<span class="hamburger-inner"></span>
 					</span>
@@ -240,4 +240,4 @@
 
 </script>
 
-</php>
+</html>
