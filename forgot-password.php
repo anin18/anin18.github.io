@@ -1,6 +1,5 @@
 <?php
 require 'header.php';
-include('includes/dbh.inc.php');
 
 if (isset($_POST["email"]) && (!empty($_POST["email"]))) {
 
