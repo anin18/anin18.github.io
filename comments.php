@@ -29,12 +29,13 @@ require 'header.php';
                 <div class="row justify-content-center  no-gutters p-2 ">
                     <div class="col-md-8">
                         <div class="form-group mb-5">
-                            <label for="content-message">Unesite ovde svoju poruku:</label>
+                            <label for="content-message" class="pinkdark">Unesite ovde svoju poruku:</label>
                             <textarea name="message"  rows="3" class="form-control w-100 mb-md-0 input-comment" id="comment"
                             required></textarea>
                         </div>
                         <div class="form-group">
                             <input type="submit" name="commentSubmit" class="btn btn-warning text-warning" value="Pošalji" />
+                            <a href="#comm" class="pinkdark ml-5 "> Vidi komentare </a>
                         </div>
                     </div>
                 </div>
