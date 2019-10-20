@@ -120,11 +120,11 @@ your account and change your security password as someone may have guessed it.</
                 <div class="login-wrapper position-absolute text-center p-3 p-md-4">
                     <form method="post" action="" name="reset" class="login-form m-auto">
                         <div class="form-group mb-4">
-                            <label><strong>Unesite vašu e-mail adresu:</strong></label> <br><br>
-                            <input type="email" name="email" class="form-control" placeholder="username@email.com">
+                            <label class="text-warning"><strong>Unesite vašu e-mail adresu:</strong></label> <br><br>
+                            <input type="email" name="email" class="form-control" placeholder="korisnik@email.com">
                         </div>
                         <div class="form-group mb-4">
-                        <button class="btn btn-lg" type="submit">Resetujte šifru</button>
+                        <button class="btn btn-lg" type="submit">Obnovite šifru</button>
                         </div>
                     </form>
                 </div>
