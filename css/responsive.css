@@ -46,7 +46,12 @@
   .comments-wall{
   height: 400px;  
 }
-    
+  #reply-main{
+    top:10% !important;
+  }  
+  .comment-item{
+    max-width: 80%;
+}
 }
 
 
@@ -157,11 +162,12 @@
 .cake .submenu{
   display: none;
 }
-/*---------------COMMENS LOGGED---------------*/
+/*---------------COMMENTS LOGGED---------------*/
 .comments-logged-sweet-wall{
   height: 340px; 
   background-size: cover;
    }
+
 
 }
 
