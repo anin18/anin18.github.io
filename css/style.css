@@ -34,6 +34,9 @@ a:hover {
 .text-warning{
     color:#b2af34 !important;
 }
+.text-lightpink {
+    color:#cfaccfe3 ;
+}
 .btn-warning,
 .bg-warning{
     background-color: #b2b034 !important;
@@ -314,7 +317,7 @@ section.login .main-sweet-wall{
 .login-form  input:focus{
     background-color: #851e72;
     border:none;
-    border-bottom: 1px solid white ;
+    border-bottom: 1px solid white;
     color:white;
 }
 .login-form  input::placeholder{
@@ -464,19 +467,12 @@ main.comments-main{
         height: 460px; 
         background-size: cover;
     }
-    .main-logged-comments-info{
-        top:21% !important;
-        left:50%;
-        transform: translateX(-50%);
-        border-radius: 50px/30px;
-        background-color: #b2b034;
-    }
      #reply-main {
         background-color: #851e72;
         border:10px dotted  #b2af34; 
         border-radius: 15px;
      }
-     #reply-main textarea{
+     #reply-main textarea {
          background-color:  #851e72;
      }
      #reply-main textarea{
@@ -486,6 +482,9 @@ main.comments-main{
          border-color:transparent !important;
          border-bottom: 1px solid #936693 !important;
      }
+     #reply-main textarea.form-control:focus{
+        border-bottom: 1px solid #fff!important;
+    }
      #reply-main label {
         color: #cfaccfe3;
      }
@@ -502,7 +501,12 @@ main.comments-main{
         background-color: #b2af34 !important;
         color:#533454;
     }
-
+    .comment-item{
+        max-width: 90%;
+    }
+    .comment-item .log:hover{
+        opacity:0.8;
+    }
     .comment-item .cbutton{
         background-color: #b2af34 !important;
         color:#533454;
@@ -526,6 +530,14 @@ main.comments-main{
     line-height: 1rem;
 }
 /*---------------comments.php---------------*/
+
+.main-logged-comments-info{
+    top:21% !important;
+    left:50%;
+    transform: translateX(-50%);
+    border-radius: 50px/30px;
+    background-color: #b2b034;
+}
 .comments-wall{
     height: 500px; 
     background-size: cover;
@@ -536,4 +548,24 @@ main.comments-main{
     border:none;
     border-bottom: 1px solid #936693 !important;
     color:white;
+}
+/*-----------------editcomment.php-----------------------------*/
+.input-comment{
+    background-color: transparent;
+}
+.input-comment.form-control{
+    border:none !important;
+    border-bottom: 1px solid #936693 !important;
+    border-radius: 0 !important;
+}
+.input-comment.form-control:focus{
+    box-shadow: none !important;
+    border:1px solid #936693 !important;
+}
+.send-btn:hover {
+    background-color: #b2b034 !important;
+    color: #000 !important;
+}
+.all-comments:hover{
+    color:#b2b034 !important;
 }
