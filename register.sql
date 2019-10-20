@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 20, 2019 at 01:23 AM
+-- Generation Time: Oct 20, 2019 at 10:58 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.1.32
 
@@ -41,11 +41,9 @@ CREATE TABLE `comments` (
 --
 
 INSERT INTO `comments` (`cid`, `uid`, `date`, `message`, `id`) VALUES
-(1, 'marija', '2019-10-09 00:00:00', 'Svaka cast! Sve pohvale', 1),
-(105, 'ivona123', '2019-10-19 17:21:11', 'Sve pohvale\r\n', 3),
-(110, 'marija', '2019-10-20 00:31:16', 'Koliko koÅ¡ta jedna deÄija torta?', 1),
-(111, 'marija', '2019-10-20 00:31:35', 'PoÅ¡tovani, jako mi se dopadaju vaÅ¡e torte i oduÅ¡evljena sam sajom i slikama.\r\n', 1),
-(112, 'marija', '2019-10-20 00:31:35', 'PoÅ¡tovani, jako mi se dopadaju vaÅ¡e torte i oduÅ¡evljena sam sajom i slikama.\r\n', 1);
+(112, 'marija', '2019-10-20 00:31:35', 'PoÅ¡tovani, jako mi se dopadaju vaÅ¡e torte i oduÅ¡evljena sam sajtom i slikama.\r\n', 1),
+(114, 'nina90', '2019-10-20 10:42:13', 'Koliko koÅ¡ta jedna deÄija torta?', 6),
+(115, 'ana', '2019-10-20 10:43:11', 'Sve pohvale!', 5);
 
 -- --------------------------------------------------------
 
@@ -92,7 +90,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `trn_date`) VALUES
 (1, 'marija', 'marijaculafic88@gmail.com', '$2y$10$Ib.dZKRCT1Fkufm9lkJE/OXw5mlel1WqhEcS1uaZRs96O552yXX2u', '2019-10-20 00:33:45'),
-(3, 'ivona123', 'ivona123@live.com', '$2y$10$3m24KLADvC51fMLJJGn/q.sKUUSIadIvczFN34jp..2/PIUErG98S', '2019-10-08 00:00:00');
+(3, 'ivona123', 'ivona123@live.com', '$2y$10$3m24KLADvC51fMLJJGn/q.sKUUSIadIvczFN34jp..2/PIUErG98S', '2019-10-08 00:00:00'),
+(5, 'ana', 'anaivanovic75@gmail.com', '$2y$10$B6uKNln3RxSvIL0lQxl.jOjGwG1BZEu05IRTYKSXLoqldy73Y0Sgi', '2019-10-03 04:19:29'),
+(6, 'nina90', 'ninaknezevic90@gmail.com', '$2y$10$JxC/K3W3.gXzEazVwPggCOHf1uM9q5k29mIvgdeAVNnYOBjf.xUO6', '2019-10-06 06:33:16');
 
 --
 -- Indexes for dumped tables
@@ -119,13 +119,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
+  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=116;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables
