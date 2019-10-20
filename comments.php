@@ -3,7 +3,7 @@ require 'header.php';
 ?>
 
 <!--MAIN STARTS HERE-->
-<main class="main-comments">
+<main class="main-comments" style="background-image: url('images/assets/pink1.jpg');">
 
     <!-- MAIN-COMMENTS-INFO STARTS HERE-->
     <?php
