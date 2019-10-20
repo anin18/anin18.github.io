@@ -39,7 +39,7 @@ session_start();
     <header class="fixed-top py-0 mb-5">
         <div class="container">
             <nav class="navbar navbar-expand-md  p-0 ">
-                <a class="navbar-brand py-0" href="#">
+                <a class="navbar-brand py-0 buzz" href="#">
                     <img src="images/assets/logo.png" alt="logo">
                 </a>
 
