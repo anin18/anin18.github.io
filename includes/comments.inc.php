@@ -20,12 +20,12 @@ function getComments($conn)
     `comments`.`id` = `users`.`id`
     ORDER BY date desc";
     $result = $conn->query($sql);
-    echo '<div style="background-color: rgb(248, 237, 243); padding-bottom: 100px;" id="comm">';
+    echo '<div class="bg-light pb-5" id="comm">';
     while ($row = $result->fetch_assoc()) {
         $id = $row['cid'];
         echo '
-        <article class="comment-item p-3 m-auto" style="width: 60%;">
-            <div class="ccomment p-sm-3 ">
+        <article class="comment-item p-3 m-auto">
+            <div class="ccomment p-2 p-sm-3 ">
                 <div>
                     <span class="cname font-weight-bold">'.$row["username"].'</span>
                     <p class="date small mb-2">
@@ -46,7 +46,7 @@ function getComments($conn)
                     <input type='hidden' name='uid' value='" . $row['username'] . "'>
                     <input type='hidden' name='date' value='" . $row['date'] . "'>
                     <input type='hidden' name='message' value='" . $row['message'] . "'>
-                    <button type='submit' class='log btn btn-pinkdark text-warning btn-sm'> Izmeni </button>
+                    <button type='submit' class='log btn btn-pinkdark text-white btn-sm'> Izmeni </button>
                 </form>";
 
             echo "
