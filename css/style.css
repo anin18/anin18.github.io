@@ -136,6 +136,7 @@ header{
 .main-sweet-info {
     top:30%;
     left:20%;
+    transform:translate(-10%);
     background-image: linear-gradient(to right top, #5f198c, #691887, #711782, #78187d, #7e1a78, #882080, #932689, #9e2c91, #b038aa, #c144c3, #d151df, #e05ffb);
     background-attachment: fixed;
     border-radius: 70px/30px;
