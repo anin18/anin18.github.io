@@ -20,10 +20,10 @@ function getComments($conn)
     `comments`.`id` = `users`.`id`
     ORDER BY date desc";
     $result = $conn->query($sql);
-
+    echo '<div style="background-color: rgb(248, 237, 243); padding-bottom: 100px;">';
     while ($row = $result->fetch_assoc()) {
         $id = $row['cid'];
-        echo '<div style="background-color: rgb(248, 237, 243);">
+        echo '
         <article class="comment-item p-3 m-auto" style="width: 60%;">
             <div class="ccomment p-sm-3 ">
                 <div>
@@ -56,6 +56,7 @@ function getComments($conn)
                 </form>
             </div>";
             }
-            echo "</article></div>";      
+            echo "</article>";      
     }
+    echo "</div>";
 }
