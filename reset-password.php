@@ -46,11 +46,11 @@ if (
                                     <input type="hidden" name="action" value="update" class="form-control">
                                 </div>
                                 <div class="form-group mb-4">
-                                    <label>Unesite novu šifru:</label>
+                                    <label class="text-warning font-weight-bold">Unesite novu šifru:</label>
                                     <input type="password" name="pass1" class="form-control" required>
                                 </div>
                                 <div class="form-group mb-4">
-                                    <label>Ponovo unesite novu šifru:</label>
+                                    <label class="text-warning font-weight-bold">Ponovo unesite novu šifru:</label>
                                     <input type="password" name="pass2" class="form-control" required>
                                 </div>
                                 <div class="form-group mb-4">
