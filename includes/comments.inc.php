@@ -23,8 +23,8 @@ function getComments($conn)
 
     while ($row = $result->fetch_assoc()) {
         $id = $row['cid'];
-        echo '
-        <article class="comment-item p-3 container">
+        echo '<div style="background-color: rgb(248, 237, 243);">
+        <article class="comment-item p-3 m-auto" style="width: 60%;">
             <div class="ccomment p-sm-3 ">
                 <div>
                     <span class="cname font-weight-bold">'.$row["username"].'</span>
@@ -56,6 +56,6 @@ function getComments($conn)
                 </form>
             </div>";
             }
-            echo "</article>";      
+            echo "</article></div>";      
     }
 }
