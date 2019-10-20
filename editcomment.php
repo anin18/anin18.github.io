@@ -10,15 +10,15 @@ require 'header.php';
     $message = $_POST['message'];
 
     echo '
-    <article class="comment-item p-3 container" style="width: 50%;">
-      <div class="ccomment p-sm-3 ">
+    <article class="comment-item p-3 container" style="width: 80%;">
+      <div class="ccomment p-2 p-sm-3 ">
         <div class="mb-2">
           <form method = "post" action="includes/editComment.inc.php" >
             <input type ="hidden" name= "cid" value="' . $cid . '">
             <input type ="hidden" name= "uid" value="' . $uid . '">
             <input type ="hidden" name= "date" value="' . $date . '">
-            <textarea name="message" class="form-control w-100 mb-md-0 input-comment">' . $message . '</textarea><br>
-            <button type="submit" name="commentSubmit" class="log btn btn-pinkdark text-warning btn-sm"> Izmeni </button>
+            <textarea name="message" rows="5" class="form-control w-100 mb-md-0 input-comment">' . $message . '</textarea><br>
+            <button type="submit" name="commentSubmit" class="log btn btn-pinkdark text-white btn-sm"> Izmeni </button>
           </form>
         </div>
       </div>
