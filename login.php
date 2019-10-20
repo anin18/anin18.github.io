@@ -11,7 +11,7 @@ require 'header.php';
 
                 <?php
                 if (isset($_SESSION['userId'])) {
-                    echo '<h2 class="text-info"> Dobrodošli, ' . $_SESSION['userUid'] . '.<br> Uspešno ste ulogovani!</h2>';
+                    echo '<h2 class="text-warning"> Dobrodošli, ' . $_SESSION['userUid'] . '.<br> Uspešno ste ulogovani!</h2>';
                 } else {
                     echo '<h2>Prijava</h2>';
                     echo '<h5 class="mb-4 mb-sm-5">Ako niste naš član, možete se registrovati <a
