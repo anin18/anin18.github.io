@@ -5,7 +5,7 @@ require 'header.php';
 <!--MAIN STARTS HERE-->
 <main>
     <!--SECTION LOGIN STARTS HERE-->
-    <section class="login" id="login">
+    <section class="login" id="login" style="padding-bottom: 50px;">
         <div class="main-sweet-wall">
             <div class="login-wrapper position-absolute text-center p-3 p-md-5 scale-in-center">
 
