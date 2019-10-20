@@ -3,7 +3,7 @@ require 'header.php';
 ?>
 
 <!--MAIN STARTS HERE-->
-<main class="main-comments" style="background-image: url('images/assets/pink1.jpg');">
+<main class="main-comments bg-light">
 
     <!-- MAIN-COMMENTS-INFO STARTS HERE-->
     <?php
@@ -21,7 +21,7 @@ require 'header.php';
         </section>
        
         <section class="mb-3 mb-sm-4 container">
-        <form method="POST" action="'. setComments($conn) .'" class="form-inline comments-item-form justify-content-between align-items-start py-2">
+        <form method="POST" action="'. setComments($conn) .'" class="form-inline comments-item-form justify-content-between align-items-start py-2" id="reply-main">
             <input type ="hidden" name= "uid" value="'.$_SESSION['userUid'].'">
             <input type ="hidden" name= "id" value="'.$_SESSION['userId'].'">
             <input type ="hidden" name= "date" value="' . date("Y:m:d H:i:s") . '">
@@ -30,12 +30,12 @@ require 'header.php';
                     <div class="col-md-8">
                         <div class="form-group mb-5">
                             <label for="content-message" class="pinkdark">Unesite ovde svoju poruku:</label>
-                            <textarea name="message"  rows="3" class="form-control w-100 mb-md-0 input-comment" id="comment"
+                            <textarea name="message"  rows="3" class="form-control w-100 mb-md-0 input-comment" id="content-message"
                             required></textarea>
                         </div>
                         <div class="form-group">
-                            <input type="submit" name="commentSubmit" class="btn btn-warning text-warning" value="Pošalji" />
-                            <a href="#comm" class="pinkdark ml-5 "> Vidi komentare </a>
+                            <input type="submit" name="commentSubmit" class="btn btn-warning text-warning send-btn" value="Pošalji" />
+                            <a href="#comm" class="text-lightpink ml-5 all-comments "> Vidi komentare </a>
                         </div>
                     </div>
                 </div>
