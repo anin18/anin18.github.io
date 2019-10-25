@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 20, 2019 at 10:58 AM
+-- Generation Time: Oct 25, 2019 at 03:36 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.1.32
 
@@ -41,7 +41,7 @@ CREATE TABLE `comments` (
 --
 
 INSERT INTO `comments` (`cid`, `uid`, `date`, `message`, `id`) VALUES
-(112, 'marija', '2019-10-20 00:31:35', 'PoÅ¡tovani, jako mi se dopadaju vaÅ¡e torte i oduÅ¡evljena sam sajtom i slikama.\r\n', 1),
+(112, 'marija', '2019-10-20 00:31:35', 'PoÅ¡tovani, jako mi se dopadaju vaÅ¡e torte i oduÅ¡evljena sam sajtom i slikama!\r\n', 1),
 (114, 'nina90', '2019-10-20 10:42:13', 'Koliko koÅ¡ta jedna deÄija torta?', 6),
 (115, 'ana', '2019-10-20 10:43:11', 'Sve pohvale!', 5);
 
@@ -68,7 +68,8 @@ INSERT INTO `password_reset_temp` (`email`, `key`, `expDate`) VALUES
 ('mara@mara.com', '768e78024aa8fdb9b8fe87be86f6474574f0fea269', '2019-09-21 16:12:32'),
 ('mara@mara.com', '4a6330bc363811bab89789ba6ce80d59c13db77021', '2019-09-21 16:21:01'),
 ('mara@mara.com', '4a6330bc363811bab89789ba6ce80d59be0f02d87f', '2019-09-21 16:22:37'),
-('mara@mara.com', '4a6330bc363811bab89789ba6ce80d591cd76e530c', '2019-09-21 16:31:19');
+('mara@mara.com', '4a6330bc363811bab89789ba6ce80d591cd76e530c', '2019-09-21 16:31:19'),
+('marijaculafic88@gmail.com', '47105bece99d0bd352accfc8de271d9850441e30fe', '2019-10-21 13:17:51');
 
 -- --------------------------------------------------------
 
@@ -81,7 +82,7 @@ CREATE TABLE `users` (
   `username` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `password` longtext CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `trn_date` datetime NOT NULL
+  `trn_date` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_unicode_ci;
 
 --
@@ -89,7 +90,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `trn_date`) VALUES
-(1, 'marija', 'marijaculafic88@gmail.com', '$2y$10$Ib.dZKRCT1Fkufm9lkJE/OXw5mlel1WqhEcS1uaZRs96O552yXX2u', '2019-10-20 00:33:45'),
+(1, 'marija', 'marijaculafic88@gmail.com', '$2y$10$C3pJUfX3a8U3oUlIucBekug9qVGY9sCpRgdN6rFBswkKs0mwNyn6u', '2019-10-20 12:24:30'),
 (3, 'ivona123', 'ivona123@live.com', '$2y$10$3m24KLADvC51fMLJJGn/q.sKUUSIadIvczFN34jp..2/PIUErG98S', '2019-10-08 00:00:00'),
 (5, 'ana', 'anaivanovic75@gmail.com', '$2y$10$B6uKNln3RxSvIL0lQxl.jOjGwG1BZEu05IRTYKSXLoqldy73Y0Sgi', '2019-10-03 04:19:29'),
 (6, 'nina90', 'ninaknezevic90@gmail.com', '$2y$10$JxC/K3W3.gXzEazVwPggCOHf1uM9q5k29mIvgdeAVNnYOBjf.xUO6', '2019-10-06 06:33:16');
@@ -119,13 +120,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=116;
+  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=119;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Constraints for dumped tables
