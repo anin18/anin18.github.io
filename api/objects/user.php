@@ -19,9 +19,6 @@ class User
         $this->conn = $db;
     }
 
-    // create() method will be here
-
-
     // create new user record
     public function create()
     {
