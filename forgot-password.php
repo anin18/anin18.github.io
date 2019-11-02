@@ -18,8 +18,8 @@ if (isset($_POST["email"]) && (!empty($_POST["email"]))) {
             </section>
         </main>';
     } else {
-        $sel_query = "SELECT * FROM `users` WHERE email='" . $email . "'";
-        $results = mysqli_query($conn, $sel_query);
+        $sql = "SELECT * FROM `users` WHERE email='" . $email . "'";
+        $results = mysqli_query($conn, $sql);
         $row = mysqli_num_rows($results);
         if ($row == "") {
             $error .=
@@ -37,7 +37,7 @@ if (isset($_POST["email"]) && (!empty($_POST["email"]))) {
     }
     if ($error != "") {
         echo "<div class='error'>" . $error . "</div>
-   <br /><a href='javascript:history.go(-1)'>Go Back</a>";
+   <br /><a href='javascript:history.back()'>Vratite se nazad.</a>";
     } else {
         $expFormat = mktime(
             date("H"),
@@ -71,7 +71,7 @@ your account and change your security password as someone may have guessed it.</
         $output .= '<p>Thanks,</p>';
         $output .= '<p>AllPHPTricks Team</p>';
         $body = $output;
-        $subject = "Password Recovery - AllPHPTricks.com";
+        $subject = "Password Recovery";
 
         $email_to = $email;
         $mailFrom = "anmcakes123@gmail.com";

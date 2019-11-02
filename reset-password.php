@@ -1,6 +1,5 @@
 <?php
 require 'header.php';
-include('includes/dbh.inc.php');
 
 if (
     isset($_GET["key"]) && isset($_GET["email"]) && isset($_GET["action"])
@@ -66,7 +65,7 @@ if (
             </main>
 <?php
         } else {
-            $error .='
+            $error .= '
             <main>     
                 <section class="login" id="login">
                     <div class="main-sweet-wall">
@@ -93,28 +92,27 @@ if (
     $pass2 = mysqli_real_escape_string($conn, $_POST["pass2"]);
     $email = $_POST["email"];
     $curDate = date("Y-m-d H:i:s");
-    $error = "";
     $class = '
     <main>     
         <section class="login" id="login">
             <div class="main-sweet-wall">
                 <div class="login-wrapper position-absolute text-center p-3 p-md-4">';
-    $class2 ='   
+    $class2 = '   
                 </div>
             </div>
         </section>
     </main>';
-    
+
     if (!preg_match('@[A-Z]@', $pass1) || !preg_match('@[a-z]@', $pass1) || !preg_match('@[0-9]@', $pass1) || strlen($pass1) < 8) {
-        $error .= $class .'<h5> Koristite najmanje 8 znakova, uključujući velika i mala slova, i najmanje jednu cifru! 
-        <a href ="javascript:history.back()">Vratite se nazad.</a></h5>'.$class2;
+        $error .= $class . '<h5> Koristite najmanje 8 znakova, uključujući velika i mala slova, i najmanje jednu cifru! 
+        <a href ="javascript:history.back()">Vratite se nazad.</a></h5>' . $class2;
     } elseif ($pass1 != $pass2) {
-        $error .= $class .'<h5>Šifre se ne poklapaju. Obe šifre moraju biti iste.
-        <a href ="javascript:history.back()">Vratite se nazad.</a></h5>'.$class2;
+        $error .= $class . '<h5>Šifre se ne poklapaju. Obe šifre moraju biti iste.
+        <a href ="javascript:history.back()">Vratite se nazad.</a></h5>' . $class2;
     }
 
     if ($error != "") {
-        echo $error ."<br />";
+        echo $error . "<br />";
     } else {
         $pass1 = password_hash($pass1, PASSWORD_DEFAULT);;
         mysqli_query(

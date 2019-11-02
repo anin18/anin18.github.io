@@ -19,7 +19,7 @@ require 'header.php';
                 } elseif ($_GET['error'] == 'passwordcheck') {
                     echo '<h6 class="text-danger"> Šifre se ne poklapaju! </h6><br>';
                 } elseif ($_GET['error'] == 'weakpassword') {
-                    echo '<h6 class="text-danger"> Koristite najmanje 8 znakova, uključujući velika i mala slova, i najmanje jednu cifru! </h6><br>';
+                    echo '<h6 class="text-danger"> Sifra mora da ima najmanje 8 znakova, uključujući velika i mala slova, i najmanje jednu cifru! </h6><br>';
                 } elseif ($_GET['error'] == 'usertaken') {
                     echo '<h6 class="text-danger"> To korisničko ime je zauzeto! Pokušajte sa nekim drugim </h6><br>';
                 }

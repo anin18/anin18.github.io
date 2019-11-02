@@ -33,9 +33,7 @@ require 'header.php';
                         </div>
                         <div class="text-left lost-password  mb-4">
                             <a href="forgot-password.php"> Zaboravili ste šifru? </a>';
-
                     
-
                     echo '</div>
                         <button class="btn btn-lg" type="submit" name="login-submit">Prijavite se</button>
                     </form>';
