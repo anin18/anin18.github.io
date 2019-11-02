@@ -69,7 +69,7 @@ The link will expire after 1 day for security reason.</p>';
 is needed, your password will not be reset. However, you may want to log into 
 your account and change your security password as someone may have guessed it.</p>';
         $output .= '<p>Thanks,</p>';
-        $output .= '<p>AllPHPTricks Team</p>';
+        $output .= '<p>ANM cakes</p>';
         $body = $output;
         $subject = "Password Recovery";
 
