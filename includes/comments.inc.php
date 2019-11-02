@@ -16,18 +16,16 @@ function setComments($conn)
 function getComments($conn)
 {
    
-    $sql = "SELECT cid, date, message, users.username FROM `comments` JOIN `users` ON
-    `comments`.`id` = `users`.`id`
+    $sql = "SELECT cid, date, message, uid FROM `comments`
     ORDER BY date desc";
     $result = $conn->query($sql);
     echo '<div class="bg-light pb-5" id="comm">';
     while ($row = $result->fetch_assoc()) {
-        $id = $row['cid'];
         echo '
         <article class="comment-item p-3 m-auto">
             <div class="ccomment p-2 p-sm-3 ">
                 <div>
-                    <span class="cname font-weight-bold">'.$row["username"].'</span>
+                    <span class="cname font-weight-bold">'.$row["uid"].'</span>
                     <p class="date small mb-2">
                         <span class="ctime text-secondary">'.$row["date"].'</span>
                     </p>
@@ -38,12 +36,12 @@ function getComments($conn)
             <div>';
        
 
-        if ($_SESSION['userUid']==$row["username"]) {
+        if ($_SESSION['userUid']==$row["uid"]) {
             echo " 
             <div>
                 <form method='POST' action='editcomment.php' style='display: inline-block'>
                     <input type='hidden' name='cid' value='" . $row['cid'] . "'>
-                    <input type='hidden' name='uid' value='" . $row['username'] . "'>
+                    <input type='hidden' name='uid' value='" . $row['uid'] . "'>
                     <input type='hidden' name='date' value='" . $row['date'] . "'>
                     <input type='hidden' name='message' value='" . $row['message'] . "'>
                     <button type='submit' class='log btn btn-pinkdark text-white btn-sm'> Izmeni </button>
