@@ -28,7 +28,7 @@ if (isset($_POST["email"]) && (!empty($_POST["email"]))) {
                     <div class="main-sweet-wall">
                         <div class="login-wrapper position-absolute text-center p-3 p-md-4">
                             <h5>Nijedan korisnik nije registrovan sa ovom e-mail adresom!
-                            <a href ="javascript:history.back()">Vratite se nazad.</a></h5>
+                            <a href ="forgot-password.php">Vratite se nazad.</a></h5>
                         </div>
                     </div>
                 </section>
@@ -37,7 +37,7 @@ if (isset($_POST["email"]) && (!empty($_POST["email"]))) {
     }
     if ($error != "") {
         echo "<div class='error'>" . $error . "</div>
-   <br /><a href='javascript:history.back()'>Vratite se nazad.</a>";
+   <br /><a href='forgot-password.php'>Vratite se nazad.</a>";
     } else {
         $expFormat = mktime(
             date("H"),
