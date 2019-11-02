@@ -70,7 +70,7 @@
     .nav-item{
         border-bottom: none;
         padding:  0px;
-       /* text-shadow: 3px 3px 10px #ff07c1; */
+        tranistion:0.8s linear;
     } 
     .nav-item .nav-link{
       text-decoration-style: double;
